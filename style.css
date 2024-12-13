@@ -2,52 +2,14 @@
 
 body{
     font-family: 'Roboto', sans-serif;
-    background: #EBEBEB;
-
 }
 
 *{
     box-sizing: border-box;
 }
-
-.container{
-    display: grid;
-    grid-template-columns: 200px auto 100px;
-    grid-template-rows: 65px auto 300px;
-    grid-template-areas: 
-        "logo menu menu"
-        "sidemenu content advertise"
-        "footer footer footer"
-    ;
-
+html, body {
+    margin: 0;
 }
-
-.logo{
-    grid-area: logo;
+:root {
+    
 }
-.menu{
-    grid-area: menu;
-    width: 100%;
-    height: 100%;
-    background: pink;
-}
-.side-menu{
-    grid-area: sidemenu;
-
-}
-.content{
-    grid-area: content;
-    height: 500PX;
-    background: purple;
-}
-.advertise{
-    grid-area: advertise;
-}
-.footer{
-    grid-area: footer;
-    width: 100%;
-    height: 100%;
-    background: rgb(85, 85, 161);
-}
-
-
