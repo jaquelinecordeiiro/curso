@@ -1,15 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-body{
-    font-family: 'Roboto', sans-serif;
+body, button, input, select, textarea {
+    font-family: "Poppins", sans-serif;
 }
 
 *{
     box-sizing: border-box;
 }
+
 html, body {
     margin: 0;
 }
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 :root {
-    
+    --dark-blue: #1D1D1D;
+    --liht-grey: #BFBFC1;
+}
+
+.iphone-container{
+    width: 350px;
+    height: 700px;
+    border-radius: 45px;
+    border: 20px solid #111;
+    background: var(--dark-blue);
+    color: white;
+    text-align: center;
+
+}
+
+.iphone-container .notch {
+    width: 180px;
+    height: 25px;
+    background: #111;
+    border-radius: 0 0 30px 30px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.iphone-container .iphone-menu{
+    width: 90px;
+    background: var(--liht-grey);
+    height: 2px;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% 45px);
 }
