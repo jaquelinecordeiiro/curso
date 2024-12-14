@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 body, button, input, select, textarea {
     font-family: "Poppins", sans-serif;
@@ -24,15 +24,29 @@ body{
     --liht-grey: #BFBFC1;
 }
 
+h2, h4{
+    margin: 5px;
+}
+
+h4{
+    font-weight: 300;
+}
+
+h1{
+    font-size: 80px;
+    margin: 0;
+    font-weight: 300;
+}
 .iphone-container{
     width: 350px;
     height: 700px;
     border-radius: 45px;
     border: 20px solid #111;
     background: var(--dark-blue);
+    position: relative;
     color: white;
     text-align: center;
-
+    padding: 60px 10px 20px;
 }
 
 .iphone-container .notch {
@@ -40,8 +54,9 @@ body{
     height: 25px;
     background: #111;
     border-radius: 0 0 30px 30px;
-    margin: 0 auto;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 90px);
 }
 
 .iphone-container .iphone-menu{
@@ -51,5 +66,21 @@ body{
     border-radius: 8px;
     position: absolute;
     bottom: 20px;
-    left: calc(50% 45px);
+    left:calc(50%-45px);
+}
+
+.iphone-container svg{
+    width: 100px;
+    height: 100px;
+    margin: 40px 0 20px;
+}
+
+.iphone-container .week-weather{
+    color: var(--liht-grey);
+    margin-top: 40px;
+    padding: 0 20px;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 1rem;
 }
