@@ -58,3 +58,6 @@ header .container button{
     margin-top: 40px;
     
 }
+nav{
+    display: flex;
+}
