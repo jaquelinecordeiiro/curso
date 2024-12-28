@@ -7,6 +7,8 @@
     --duron: #038C73;
     --toa: #36BFB1;
     --wid: #D8FFDB;
+
+    --menu-height: 65px;
 }
 body, button, input, select, textarea {
     font-family: "Poppins", sans-serif;
@@ -25,7 +27,7 @@ h1{
 h2{
     font-size: 24px;
 }
-h1. h2{
+h1 h2{
     margin: 0;
     font-weight: 400;
 }
@@ -42,7 +44,7 @@ button{
     font-size: 18px;
 }
 header{
-    height: calc(100vh -65px);
+    height: calc(100vh -var(--menu-height));
     display: flex;
     align-items: center;
 }
@@ -60,4 +62,17 @@ header .container button{
 }
 nav{
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--menu-height);
+    padding: 0 100px;
+}
+nav img{
+    height: 45px;
+
+}
+nav ul{
+    font-size: 18px;
+    color: var(--duron);
+    text-decoration: none;
 }
