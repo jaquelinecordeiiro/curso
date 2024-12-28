@@ -8,7 +8,7 @@
     --toa: #36BFB1;
     --wid: #D8FFDB;
 
-    --menu-height: 65px;
+    --menu-height: 75px;
 }
 body, button, input, select, textarea {
     font-family: "Poppins", sans-serif;
@@ -36,7 +36,7 @@ p{
 }
 button{
     background:var(--pantone);
-    border: 00;
+    border: 0;
     border-radius: 16px;
     padding: 8px 35px;
     color: white;
@@ -44,7 +44,7 @@ button{
     font-size: 18px;
 }
 header{
-    height: calc(100vh -var(--menu-height));
+    height: calc(100vh - var(--menu-height));
     display: flex;
     align-items: center;
 }
@@ -65,14 +65,22 @@ nav{
     align-items: center;
     justify-content: space-between;
     height: var(--menu-height);
+    background: var(--pantone);
     padding: 0 100px;
+    position: sticky;
+    top: 0;
 }
 nav img{
-    height: 45px;
+    height: 75px;
 
 }
-nav ul{
-    font-size: 18px;
-    color: var(--duron);
+nav ul a{
+    font-size: 24px;
+    color: var(--toa);
     text-decoration: none;
+    margin: 0 35px;
+}
+section{
+    height: 1500px;
+
 }
