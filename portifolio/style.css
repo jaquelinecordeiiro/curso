@@ -43,6 +43,14 @@ button{
     font-weight: bold;
     font-size: 18px;
 }
+
+.title-pourple{
+    color: var(--pantone);
+}
+.title-green{
+    color: var(--duron);
+}
+
 header{
     height: calc(100vh - var(--menu-height));
     display: flex;
@@ -56,9 +64,7 @@ header .container{
 header .container img{
     display: none;
 }
-header .container h1{
-    color: var(--duron);
-}
+
 header .container button{
     margin-top: 40px;
     
@@ -91,9 +97,22 @@ nav ul a{
 nav ul a svg{
     display: none;
 }
-section{
-    height: 1500px;
+.about-me{
+    display: flex;
+    padding: 100px;
+}
 
+.about-me .container{
+    width: 50%;
+    padding-right: 50px;
+}
+
+.about-me .img-container{
+    width: 50%;
+    text-align: center;
+}
+.about-me .img-container img{
+    width: 60%;
 }
 
 /*RESPONSIVIDADE*/
