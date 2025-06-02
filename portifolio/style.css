@@ -135,6 +135,20 @@ nav ul a svg{
     transform: rotate(-3.3deg);
     color: var(--pantone);
 }
+
+.services{
+    text-align: center;
+}
+.services-container{
+    display: flex;
+}
+.services .services-container .services-card {
+    width: 357;
+    height: 464;
+    top: 1784px;
+    left: 113px;
+}
+
 /*RESPONSIVIDADE*/
 @media (max-width: 1000px){
     header .container{
