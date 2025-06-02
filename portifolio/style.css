@@ -191,10 +191,10 @@ nav ul a svg{
         width: 100%;
         bottom: 0;
         top: unset;
-        padding: 15px;
+        padding: 0 15px;
     }
     nav ul a{
-        font-size: 10px;
+        font-size: 12px;
     }
     nav ul a svg{
         display: block;
