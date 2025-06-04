@@ -2,10 +2,10 @@
 
 :root{
     --black: #0D0D0D;
-    --pantone: #014034;
-    --toyo: #02735E;
-    --duron: #038C73;
-    --toa: #36BFB1;
+    --pantone: #45214A;
+    --toyo: #323050;
+    --duron: #21445B;
+    --toa: #1A6566;
     --wid: #D8FFDB;
 
     --menu-height: 75px;
@@ -48,7 +48,7 @@ button{
     color: var(--pantone);
 }
 .title-green{
-    color: var(--duron);
+    color: var(--toyo);
 }
 
 header{
