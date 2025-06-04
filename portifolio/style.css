@@ -138,15 +138,29 @@ nav ul a svg{
 
 .services{
     text-align: center;
+    margin: 150px 0;
+    padding: 0 100px
 }
 .services-container{
+    margin-top: 60px;
     display: flex;
 }
-.services .services-container .services-card {
-    width: 357;
-    height: 464;
-    top: 1784px;
-    left: 113px;
+.services .services-container .service-card img{
+    width: 90px;
+    margin-bottom: 40px;
+
+}
+
+.services .services-container .service-card{
+    background: var(--duron);
+    border: 1px solid var(--black);
+    border-radius: 16px;
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
 }
 
 /*RESPONSIVIDADE*/
