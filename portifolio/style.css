@@ -2,10 +2,11 @@
 
 :root{
     --black: #0D0D0D;
-    --pantone: #45214A;
-    --toyo: #323050;
-    --duron: #21445B;
-    --toa: #1A6566;
+    --pantone: #5280E2;
+    --toyo: #7e60cf;
+    --duron: rgba(47, 48, 52, 1);
+;
+    --toa: #05ACF7;
     --wid: #D8FFDB;
 
     --menu-height: 75px;
@@ -92,7 +93,7 @@ nav ul{
 }
 nav ul a{
     font-size: 24px;
-    color: var(--toa);
+    color: var(--wid);
     text-decoration: none;
     
 }
@@ -124,7 +125,7 @@ nav ul a svg{
 .about-me .img-container .line{
     width: calc(60% + 50px);
     height: calc(100% + 50px);
-    border: 1px solid var(--toa);
+    border: 1px solid var(--toyo);
 
     position: absolute;
     top: -25px;
@@ -153,7 +154,7 @@ nav ul a svg{
 
 .services .services-container .service-card{
     background: var(--duron);
-    border: 1px solid var(--black);
+    border: 1px solid var(--toa);
     border-radius: 16px;
     padding: 40px 25px;
     display: flex;
