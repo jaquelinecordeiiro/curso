@@ -187,10 +187,12 @@ nav ul a svg{
 
     border-image-source: linear-gradient(159.02deg, rgba(255, 255, 255, 0.4) 5.17%, rgba(255, 255, 255, 0) 96.84%);
     max-width: 360px;
+    text-align: left;
+    padding: 50px 20px;
 }
 
 .portifolio .portifolio-container .portifolio-card .img-container{
-    margin: 50px 25px;
+    margin: 0 25px 50px;
 }
 
 .portifolio .portifolio-container .portifolio-card img{
@@ -199,6 +201,17 @@ nav ul a svg{
 }
 .portifolio .portifolio-container .portifolio-card .language-container ul {
     display: flex;
+    list-style: none;
+    
+}
+
+.portifolio .portifolio-container .portifolio-card .language-container ul li {
+    color: var(--toa);
+    border: 1px solid var(--toa);
+}
+
+.portifolio .portifolio-container .portifolio-card .language-container ul li {
+
 }
 
 .portifolio-card +.portifolio-card{
