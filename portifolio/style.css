@@ -252,6 +252,26 @@ p {
     margin: 0;
 }
 
+.curriculo{
+        padding: 0 100px;
+        text-align: center;
+}
+.curriculo .container{
+    display: flex;
+    margin: 50px 0 ;
+}
+.curriculo .container .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+.curriculo .container .content .curriculo-info{
+    display: grid;
+    grid-template-columns: 150px auto;
+    grid-gap: 1rem;
+}
+
 /*RESPONSIVIDADE*/
 @media (max-width: 1000px){
     header .container{
@@ -297,13 +317,7 @@ p {
         height: 100%;
     }
 
-    .curriculo{
-        padding: 0 100px;
-        text-align: center;
-    }
-    .curriculo .container{
-        display: flex;
-    }
+    
 }
 /*TABLET*/
 @media (max-width: 767px){
