@@ -296,6 +296,14 @@ p {
     .portifolio{
         height: 100%;
     }
+
+    .curriculo{
+        padding: 0 100px;
+        text-align: center;
+    }
+    .curriculo .container{
+        display: flex;
+    }
 }
 /*TABLET*/
 @media (max-width: 767px){
