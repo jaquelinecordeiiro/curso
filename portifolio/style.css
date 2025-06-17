@@ -45,6 +45,20 @@ button{
     font-size: 18px;
 }
 
+.secondary-button{
+    background: var(--toa);
+    border: 3px solid var(--toyo);
+    color: var(--wid);
+    font-weight: bold;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+
+}
+.secondary-button img{
+    margin-right: 15px;
+}
 .title-pourple{
     color: var(--pantone);
 }
@@ -264,12 +278,15 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-align: left;
+    width: 100%;
 }
 .curriculo .container .content .curriculo-info{
     display: grid;
     grid-template-columns: 150px auto;
     grid-gap: 1rem;
+    margin-bottom: 50px;
 }
 
 /*RESPONSIVIDADE*/
