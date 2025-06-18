@@ -272,7 +272,8 @@ p {
 }
 .curriculo .container{
     display: flex;
-    margin: 50px 0 ;
+    margin: 50px auto;
+    max-width: 1200px;
 }
 .curriculo .container .content{
     display: flex;
@@ -333,8 +334,9 @@ p {
     .portifolio{
         height: 100%;
     }
-
-    
+    .curriculo .container{
+        
+    }    
 }
 /*TABLET*/
 @media (max-width: 767px){
