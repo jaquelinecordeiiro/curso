@@ -14,20 +14,20 @@
             <h2>Hello,</h2>
             <h1 class="title-green">I am, Jaqueline Cordeiro</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore pariatur voluptatem itaque at eum numquam non, blanditiis quasi distinctio, laudantium amet rem illum enim odit necessitatibus quidem quibusdam suscipit. Similique?</p>
-            <button>Entre em Contato</button>
+            <button onclick="window.open('https://web.whatsapp.com/send?phone=5582991366558')">Entre em Contato</button>
         </div>
     </header>
     <nav>
         <img src="/assets/logo.png" alt="logo">
         <ul>
-            <a href=""><i data-feather="user"></i>Sobre mim</a>
-            <a href=""><i data-feather="briefcase"></i>Serviços</a>
-            <a href=""><i data-feather="image"></i>Portifólio</a>
-            <a href=""><i data-feather="image"></i>Currículo</a>
-            <a href=""><i data-feather="send"></i>Contato</a>
+            <a href="#about-me"><i data-feather="user"></i>Sobre mim</a>
+            <a href="#services"><i data-feather="briefcase"></i>Serviços</a>
+            <a href="#portifolio"><i data-feather="image"></i>Portifólio</a>
+            <a href="#curriculo"><i data-feather="image"></i>Currículo</a>
+            <a href="#contact"><i data-feather="send"></i>Contato</a>
         </ul>
     </nav>
-    <section class="about-me"> 
+    <section id="about-me" class="about-me"> 
         <div class="container">
             <h1 class="title-green">SOBRE MIM</h1>
             <p>
@@ -42,7 +42,7 @@
             <img src="img/IMG_20230223_142937_606 (1).jpg" alt="Jaqueline Cordeiro">
         </div>
     </section>
-    <section class="services">
+    <section id="services" class="services">
         <h1 class="title-green">Serviços</h1>
         <div class="services-container">
             <div class="service-card">
@@ -62,7 +62,7 @@
             </div>
         </div>
     </section>
-    <section class="portifolio">
+    <section id="portifolio" class="portifolio">
         <h1 class="title-green">Portifólio</h1>
         <div class="portifolio-container">
             <div class="portifolio-card">
@@ -118,7 +118,7 @@
             </div>
         </div>
     </section>
-    <section class="curriculo">
+    <section id="curriculo" class="curriculo">
         <h1 class="title-green">Currículo</h1>
         <div class="container">
             <img class="curriculo-img" src="img/curriculo.png" alt="">
@@ -138,8 +138,27 @@
                 </button>
             </div>
         </div>
+    </section>
+    <section id="contact" class="contact">
+        <h1 class="title-green">Vamos trabalhar juntos?</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime facere ex
+        </p>
+         <button onclick="window.open('https://web.whatsapp.com/send?phone=5582991366558')">
+            Entre em contato
+        </button>
+
+        <div class="social-media">
+            <a href="https://www.instagram.com/jaquelinecordeiiro/"><img src="img/instagram.png" alt="logo instagram"></a>
+            <a href="https://web.whatsapp.com/send?phone=5582991366558"><img src="img/whats.png" alt="logo whatsApp"></a>
+            <a href="https://www.linkedin.com/in/jaqueline-cordeiro-435a28200"><img src="img/linkdin.png" alt="logo linkedin"></a>
+            <a href="https://github.com/jaquelinecordeiiro"><img src="img/github.png" alt="logo github"></a>
+        </div>
 
     </section>
+    <footer>
+        <p>Mode by Jaqueline Cordeiro - 2025</p>
+    </footer>
 
     <script>
         feather.replace()
