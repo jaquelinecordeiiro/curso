@@ -403,7 +403,6 @@ footer{
     }
     header .container{
         padding: 0 40px;
-        text-align: center;
     }
     nav{
         position: fixed;
@@ -419,12 +418,15 @@ footer{
         display: block;
         margin: 0 auto 10px;
     }
+    .about-me {
+        padding: 40px;
+    }
     .services{
-        margin: 100px 0;
+        margin: 70px 0;
     }
 
     .services .services-container, .portifolio-container{
-        padding: 0;
+        padding: 0 20px;
     }
     .portifolio .portifolio-container{
         margin-top: 70px;
@@ -435,7 +437,7 @@ footer{
     .curriculo{
         padding: 0 20px;        
     }
-    .curriculo .container .content {
+    .curriculo .container .content .curriculo-info{
         padding: 0 15px;
     }
 }
