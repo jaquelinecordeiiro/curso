@@ -335,8 +335,13 @@ p {
         height: 100%;
     }
     .curriculo .container{
-        
-    }    
+        flex-wrap: wrap;
+    }
+    .curriculo .container .curriculo-img{
+        display: block;
+        margin: 0 outo 50px;
+        width: 100%;
+    }
 }
 /*TABLET*/
 @media (max-width: 767px){
@@ -357,15 +362,16 @@ p {
     header .conteinar img{
         display: none;
     }
+    
 }
 /*CELULAR*/
 @media (max-width: 480px){
     body{
         margin-bottom: calc(var(--menu-height)+50px);
-        text-align: center;
     }
     header .container{
         padding: 0 40px;
+        text-align: center;
     }
     nav{
         position: fixed;
@@ -396,5 +402,11 @@ p {
     }
     .portifolio{
         margin: 100px 0 50px;
+    }
+    .curriculo{
+        padding: 0 20px;        
+    }
+    .curriculo .container .content .curriculo-info{
+        padding: 0 15px;
     }
 }
