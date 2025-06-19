@@ -360,8 +360,8 @@ footer{
         height: 394px;
     }
     .service-card + .service-card, .portifolio-card + .portifolio-card{
-    margin-left: 0px;
-    margin-top: 30px;
+        margin-left: 0px;
+        margin-top: 30px;
     }
     .portifolio{
         height: 100%;
@@ -419,9 +419,6 @@ footer{
         display: block;
         margin: 0 auto 10px;
     }
-    .about-me{
-        padding: 40px;
-    }
     .services{
         margin: 100px 0;
     }
@@ -438,7 +435,7 @@ footer{
     .curriculo{
         padding: 0 20px;        
     }
-    .curriculo .container .content .curriculo-info{
+    .curriculo .container .content {
         padding: 0 15px;
     }
 }
