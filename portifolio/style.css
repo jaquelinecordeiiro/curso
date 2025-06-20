@@ -374,6 +374,9 @@ footer{
         margin: 0 outo 50px;
         width: 100%;
     }
+    .secondary-button{
+        width: 350px;
+    }
 }
 /*TABLET*/
 @media (max-width: 767px){
@@ -394,6 +397,11 @@ footer{
     header .conteinar img{
         display: none;
     }
+    .curriculo .container .content .curriculo-info{
+        padding: 0 15px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }  
     
 }
 /*CELULAR*/
