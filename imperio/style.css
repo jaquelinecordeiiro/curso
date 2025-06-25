@@ -54,58 +54,85 @@ h1{
     padding: 25px 35px;
     font-size: 60px;
 }
-.slider {
-    display: block;
-    height: 293px;
-    width: 600px;
-    margin: auto;
-    margin-top: 20px;
-    position: relative;
+.carousel input {
+  position: absolute;
+  left: -10000px;
+}
+.carousel {
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
 }
 
-.slider li {
-    list-style: none;
-    position: absolute;
+.carousel__stage {
+  overflow: hidden;
+  font-size: 0;
+  white-space: nowrap;
+  width: 100%;
+  height: 100%;
+  transition: text-indent 500ms;
+  position: relative;
 }
 
-.slider img {
-    margin: auto;
-    height: 100%;
-    width: 100%;
-    vertical-align: top;
-}
-.slider input {
-    display: none;
-}
-.slider label {
-    background-color: #000;
-    bottom: 10px;
-    cursor: pointer;
-    display: block;
-    height: 10px;
-    position: absolute;
-    width: 10px;
-    z-index: 10;
+.carousel__item {
+  display: inline-block;
+  text-indent: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.slider li:nth-child(1) label {
-    left: 10px;
+.carousel__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.carousel__control {
+  display: none;
+  position: absolute;
+  top: 50%;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 1;
+  font-size: 1rem;
+  padding: 20px;
+  cursor: pointer;
 }
 
-.slider li:nth-child(2) label {
-    left: 40px;
+.carousel__prev {
+  left: 0;
 }
 
-.slider li:nth-child(3) label {
-    left: 70px;
-}
-.slider img {
-    opacity: 0;
-    visibility: hidden;
+.carousel__prev::after {
+  content: ' << ';
+  display: inline-block;
 }
 
-.slider li input:checked ~ img {
-    opacity: 1;
-    visibility: visible;
-    z-index: 10;
+.carousel__next {
+  right: 0;
+}
+
+.carousel__next::after {
+  content: ' >> ';
+  display: inline-block;
+}
+#carousel1:checked ~ .carousel__stage {
+  text-indent: 0;
+}
+
+#carousel2:checked ~ .carousel__stage {
+  text-indent: -100%;
+}
+
+#carousel3:checked ~ .carousel__stage {
+  text-indent: -200%;
+}
+
+#carousel4:checked ~ .carousel__stage {
+  text-indent: -300%;
+}
+#carousel1:checked ~ .carousel__stage .carousel__item:nth-child(1) .carousel__control,
+#carousel2:checked ~ .carousel__stage .carousel__item:nth-child(2) .carousel__control,
+#carousel3:checked ~ .carousel__stage .carousel__item:nth-child(3) .carousel__control,
+#carousel4:checked ~ .carousel__stage .carousel__item:nth-child(4) .carousel__control {
+  display: block;
 }

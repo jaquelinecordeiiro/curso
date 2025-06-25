@@ -45,8 +45,38 @@
             </form>
         </div>
         <h1>PRODUTOS EM DESTAQUES</h1>
-        
+       
     </main>
+    <section class="carousel">
+        <input type="radio" name="carousel" id="carousel1" checked="checked" />
+        <input type="radio" name="carousel" id="carousel2" />
+        <input type="radio" name="carousel" id="carousel3" />
+        <input type="radio" name="carousel" id="carousel4" />
+
+        <main class="carousel__stage">
+            <aside class="carousel__item">
+            <img class="carousel__image" src="imagens/kit-mae.png" />
+            <label for="carousel2" class="carousel__next carousel__control"></label>
+            </aside>
+
+            <aside class="carousel__item">
+            <label for="carousel1" class="carousel__prev carousel__control"></label>
+            <img class="carousel__image" src="imagens/kit.png" />
+            <label for="carousel3" class="carousel__next carousel__control"></label>
+            </aside>
+
+            <aside class="carousel__item">
+            <label for="carousel2" class="carousel__prev carousel__control"></label>
+            <img class="carousel__image" src="imagens/kit2.png" />
+            <label for="carousel4" class="carousel__next carousel__control"></label>
+            </aside>
+
+            <aside class="carousel__item">
+            <label for="carousel3" class="carousel__prev carousel__control"></label>
+            <img class="carousel__image" src="imagens/kit4.png" />
+            </aside>
+        </main>
+    </section>
            
 </body>
 </html>
