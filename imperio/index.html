@@ -47,36 +47,71 @@
         <h1>PRODUTOS EM DESTAQUES</h1>
        
     </main>
-    <section class="carousel">
+    <div class="carousel">
         <input type="radio" name="carousel" id="carousel1" checked="checked" />
         <input type="radio" name="carousel" id="carousel2" />
         <input type="radio" name="carousel" id="carousel3" />
         <input type="radio" name="carousel" id="carousel4" />
 
-        <main class="carousel__stage">
-            <aside class="carousel__item">
-            <img class="carousel__image" src="imagens/kit-mae.png" />
-            <label for="carousel2" class="carousel__next carousel__control"></label>
-            </aside>
-
-            <aside class="carousel__item">
-            <label for="carousel1" class="carousel__prev carousel__control"></label>
-            <img class="carousel__image" src="imagens/kit.png" />
-            <label for="carousel3" class="carousel__next carousel__control"></label>
-            </aside>
-
-            <aside class="carousel__item">
-            <label for="carousel2" class="carousel__prev carousel__control"></label>
-            <img class="carousel__image" src="imagens/kit2.png" />
-            <label for="carousel4" class="carousel__next carousel__control"></label>
-            </aside>
-
-            <aside class="carousel__item">
-            <label for="carousel3" class="carousel__prev carousel__control"></label>
-            <img class="carousel__image" src="imagens/kit4.png" />
-            </aside>
-        </main>
-    </section>
+        <div id="slider">
+            <div id="overflow">
+                <div class="inner">
+                    <div class="slide slide_1">
+                        <div class="slide-content">
+                            <h2>Slide 1</h2>
+                            <p>slide 1</p>                
+                        </div>
+                    </div>
+                    <div class="slide slide_2">
+                        <div class="slide-content">
+                            <h2>Slide 2</h2>
+                            <p>slide 2</p>                
+                        </div>
+                    </div>
+                    <div class="slide slide_3">
+                        <div class="slide-content">
+                            <h2>Slide 3</h2>
+                            <p>slide 3</p>                
+                        </div>
+                    </div>
+                    <div class="slide slide_4">
+                        <div class="slide-content">
+                            <h2>Slide 4</h2>
+                            <p>slide 4</p>                
+                        </div>
+                    </div>
+                    <div class="slide slide_5">
+                        <div class="slide-content">
+                            <h2>Slide 5</h2>
+                            <p>slide 5</p>                
+                        </div>
+                    </div>
+                    <div class="slide slide_6">
+                        <div class="slide-content">
+                            <h2>Slide 6</h2>
+                            <p>slide 6</p>                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="controls">
+        <label for="slide1"></label>
+        <label for="slide2"></label>
+        <label for="slide3"></label>
+        <label for="slide4"></label>
+        <label for="slide5"></label>
+        <label for="slide6"></label>
+        </div>
+        <div id="bullets">
+            <label for="slide1"></label>
+            <label for="slide2"></label>
+            <label for="slide3"></label>
+            <label for="slide4"></label>
+            <label for="slide5"></label>
+            <label for="slide6"></label>
+        </div>
+    </div>
            
 </body>
 </html>
