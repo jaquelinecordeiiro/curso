@@ -4,12 +4,12 @@ const sliderEl = document.getElementById('slider');
 let interval = undefined;
 let timeout = undefined;
 
-previousEl.addEventListener('click', onPreviusClick)
-nextEl.addEventListener('click', onNextClick)
+previousEl.addEventListener('click', onPreviousClick);
+nextEl.addEventListener('click', onNextClick);
 
 autoScroll();
 
-function onPreviusClick(){
+function onPreviousClick(){
     const sliderWidth = sliderEl.offsetWidth;
     sliderEl.scrollLeft -= sliderWidth;
     handleSliderClick();
@@ -27,7 +27,7 @@ function handleSliderClick(){
     interval = undefined;
     setTimeout( () => {
         autoScroll();
-    }, 10000);    
+    }, 1000);    
 }
 
 function autoScroll() {
