@@ -13,12 +13,16 @@ autoScroll();
 function onPreviousClick(){
     const sliderWidth = sliderEl.offsetWidth;
     sliderEl.scrollLeft -= sliderWidth;
+    --selectedImgIndex;
+    handActiveDot ();
     handleSliderClick();
 }
 
 function onNextClick(){
     const sliderWidth = sliderEl.offsetWidth;
     sliderEl.scrollLeft += sliderWidth;
+    ++selectedImgIndex;
+    handActiveDot ();
     handleSliderClick();
 }
 
@@ -31,6 +35,17 @@ function handleSliderClick(){
     }, 1000);    
 }
 
+function handActiveDot (){
+     const lis=Array.from(document.getElementsByClassName('dot'));
+
+    if(selectedImgIndex < 0) selectedImgIndex = 0;
+    if(selectedImgIndex >= lis.length) selectedImgIndex = lis.length - 1;
+
+   
+    lis.forEach(el => el.classList.remove('active'));
+    lis[selectedImgIndex].classList.add('active');
+}
+
 function autoScroll() {
     if(interval) return;
 
@@ -41,9 +56,13 @@ function autoScroll() {
 
         if(numberOfImages === selectedImage) {
             sliderEl.scrollLeft = 0;
+            selectedImgIndex = 0;
+            handActiveDot ();
             return;
         }
         
         sliderEl.scrollLeft += sliderWidth;
+        ++selectedImgIndex;
+        handActiveDot ();
     }, 5000);
 }
