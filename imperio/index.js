@@ -5,13 +5,8 @@ let interval = undefined;
 let timeout = undefined;
 let selectedImgIndex = 0;
 
-<<<<<<< HEAD
-previousEl.addEventListener('click', onPreviousClick);
-nextEl.addEventListener('click', onNextClick);
-=======
 previousEl.addEventListener('click', onPreviousClick)
 nextEl.addEventListener('click', onNextClick)
->>>>>>> a975fc2af04bbbde58127d1a428ae2851c45fd28
 
 autoScroll();
 
