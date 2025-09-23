@@ -8,6 +8,7 @@ let selectedImgIndex = 0;
 previousEl.addEventListener('click', onPreviousClick);
 nextEl.addEventListener('click', onNextClick);
 
+
 autoScroll();
 
 
@@ -80,3 +81,4 @@ function autoScroll() {
         updateSlider();
     }, 5000);
 }
+
