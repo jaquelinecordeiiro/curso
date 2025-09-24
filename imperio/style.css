@@ -27,17 +27,30 @@ h1{
     padding: 25px 35px;
     font-size: 60px;
 }
-.list-main{    
+#btn-mobile{
+    display: none;
+}
+#list-main{    
     margin-top: 0px;
+    margin: 0 15px;
     padding: 15px;
     color: var(--wid);
 
     font-family: "Poppins", sans-serif;
     font-size: 25px;
+
+    display: flex ;
+}
+
+#list-main a{
+    text-decoration: none;
+    color: var(--beige);
+   
 }
 
 .main-items{
     padding: 10px;
+    list-style: none;
 }
 .main .main-container{
     text-align: center;
@@ -133,5 +146,88 @@ h1{
 
     &.active{
         background: var(--deep-purple);
+    }
+}
+/*RESPONSIVIDADE*/
+@media (max-width: 1000px){
+    header .container{
+        width: 100%;        
+    }
+    
+    nav ul a{
+        font-size: 18px;
+    }
+
+    nav{
+        padding: 0 30px;
+    }    
+}
+/*TABLET*/
+@media (max-width: 767px){
+    
+    header .container img{
+        display: inline;
+        margin-bottom: 70px;
+    }    
+    nav ul{
+        padding: 0;
+    }     
+    #btn-mobile{
+        display: block;
+        
+    }
+}
+/*CELULAR*/
+@media (max-width: 480px){
+    body{
+        margin-bottom: calc(var(--menu-height)+50px);
+    }
+    header .container{
+        padding: 0 40px;
+    }
+    #main{
+        align-items: center;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        top: unset;
+        padding: 0 15px;
+    }
+    
+    #list-main{
+        display: block;
+        position: absolute;
+        width: 100%;
+        top:70px;
+        right: 0px;
+        background: var(--deep-purple);
+        transition: .6s;
+        z-index: 1000;
+        height: 0px;
+        visibility: hidden;
+        overflow-y: hidden;      
+    }
+    #main.active #list-main{
+        height:  calc(100vh - 70px);
+        visibility: visible;
+        overflow-y: auto;        
+    }
+    #list-main a{
+        padding: 1 rem 0;
+        margin: 0 1rem;
+        border-bottom: 1px solid var(--beige);
+
+    }
+    #btn-mobile{
+        display: flex;
+        padding: .5rem 1rem;
+        font-size: 2rem;
+        background: none;
+        cursor: pointer;
+        gap: 5px;
+    }
+    #hamburguer{
+        border-top: 2px solid;
+        width: 20px;
     }
 }

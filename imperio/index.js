@@ -1,6 +1,7 @@
 const previousEl = document.getElementById('previous');
 const nextEl = document.getElementById('next');
 const sliderEl = document.getElementById('slider');
+
 let interval = undefined;
 let timeout = undefined;
 let selectedImgIndex = 0;
@@ -8,6 +9,14 @@ let selectedImgIndex = 0;
 previousEl.addEventListener('click', onPreviousClick);
 nextEl.addEventListener('click', onNextClick);
 
+const btnMobile = document.getElementById('btn-mobile');
+
+function toggleMenu() {
+    const main = document.getElementById('main');
+    main.classList.toggle('active');
+}
+
+btnMobile.addEventListener('click', toggleMenu);
 
 autoScroll();
 
