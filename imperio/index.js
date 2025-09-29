@@ -2,6 +2,23 @@ const previousEl = document.getElementById('previous');
 const nextEl = document.getElementById('next');
 const sliderEl = document.getElementById('slider');
 
+const iconEl = document.getElementById('icon');
+const mainEl = document.getElementById('main');
+
+iconEl.addEventListener('click', handelIcon);
+
+function handelIcon() {
+    const mainClassList = Array.from(mainEl.classList);
+    const isActive = mainClassList.find(el => el === 'activate') ;
+
+    if (isActive) {
+        mainEl.classList.remove('activate');
+        return;
+    }
+
+    mainEl.classList.add('activate');
+}
+
 let interval = undefined;
 let timeout = undefined;
 let selectedImgIndex = 0;
