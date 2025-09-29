@@ -10,13 +10,9 @@
 </head>
 <body>
     <header class="header">
-        <h1>IMPÉRIO DA NADJA</h1>
-
-        <button id="btn-mobile">MENU
-
-            <span id="hamburguer"></span>
-        </button>
-
+        <h1>IMPÉRIO DA NADJA</h1>  
+        <i id="menu-icon" data-feather="menu"></i>
+        <script src="https://unpkg.com/feather-icons"></script>      
         <nav id="main">
         <ul id="list-main">
             <li class="main-items"><a href="">Lançamentos</a></li>
@@ -83,6 +79,11 @@
         </section>
     </main> 
     <footer></footer>
+
+    
+    <script>
+        feather.replace();
+    </script>
     
     <script src="index.js"></script>       
 </body>
