@@ -17,7 +17,7 @@ html, body{
 }
 
 .header{
-    height: 100px;
+    width: 100%;
     background: var(--deep-purple);    
 }
 h1{
@@ -31,14 +31,14 @@ h1{
     display: none;    
 }
 
-#list-main{    
+#list-main{  
+    display: flex ;
     margin-top: 0px;
     margin: 0 15px;
     padding: 15px;
     color: var(--wid);
     font-family: "Poppins", sans-serif;
     font-size: 25px;
-    display: flex ;
 }
 
 #list-main a{
@@ -254,9 +254,11 @@ h1{
         align-items: center;
         justify-content: center;
     }
-    .main-container .img-container {
+    .main .main-container .img-container {
+        width: 350px;
         margin: 0 auto;
         display: block;
+        padding: 20px;
 
     }  
      
