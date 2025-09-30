@@ -5,19 +5,9 @@ const sliderEl = document.getElementById('slider');
 const iconEl = document.getElementById('icon');
 const mainEl = document.getElementById('main');
 
-iconEl.addEventListener('click', handelIcon);
-
-function handelIcon() {
-    const mainClassList = Array.from(mainEl.classList);
-    const isActive = mainClassList.find(el => el === 'activate') ;
-
-    if (isActive) {
-        mainEl.classList.remove('activate');
-        return;
-    }
-
-    mainEl.classList.add('activate');
-}
+iconEl.addEventListener('click', () => {
+    mainEl.classList.toggle('active');
+});
 
 let interval = undefined;
 let timeout = undefined;
