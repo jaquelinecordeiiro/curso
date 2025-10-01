@@ -1,86 +1,117 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-:root{
+:root {
     --black: #0D0D0D;
     --deep-purple: #4A2C5A;
     --rose-gold: #E8B4A0;
     --beige: #FFFBEE;
     --pink: #F8D0C9;
     --wid: #FFFFFF;
-
     --menu-height: 75px;
 }
-html, body{
+
+/* GERAL */
+html, body {
     margin: 0;
     background: var(--beige);
-
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
 }
 
-.header{
+.header {
     width: 100%;
-    background: var(--deep-purple);    
+    background: var(--deep-purple);
 }
-h1{
+h1 {
     text-align: center;
     margin: 0;
     color: var(--wid);
     padding: 25px 35px;
     font-size: 60px;
 }
-#icon{
-    display: none;    
+#icon {
+    display: none;
 }
 
-#list-main{  
-    display: flex ;
-    margin-top: 0px;
+#list-main {
+    display: flex;
     margin: 0 15px;
     padding: 15px;
     color: var(--wid);
-    font-family: "Poppins", sans-serif;
     font-size: 25px;
-}
-
-#list-main a{
-    text-decoration: none;
-    color: var(--beige);
-   
-}
-
-.main-items{
-    padding: 10px;
     list-style: none;
 }
-.main .main-container{
+
+#list-main a {
+    text-decoration: none;
+    color: var(--pink);
+    font-size: 20px;
+    transition: color 0.2s;
+}
+
+.main-items {
+    padding: 10px;
+    list-style: none;
+    border-top: 1px solid var(--deep-purple);
+    display: flex;
+    align-items: center;
+    background: var(--deep-purple);
+    transition: background 0.2s;
+}
+
+.main-items a {
+    width: 100%;
+    padding: 10px 0;
     text-align: center;
+    transition: color 0.2s;
+}
+
+/* Hover para desktop e mobile */
+.main-items:hover {
+    background: var(--rose-gold);
+}
+.main-items:hover a {
+    color: var(--wid) !important;
+}
+
+/* Imagens centralizadas e responsivas */
+.main .main-container {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .main .main-container .img-container {
     width: 450px;
     height: 450px;
     padding: 22px;
+    margin: 0 auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
+/* Destaques */
 .main-highlights {
     background: var(--pink);
     display: flex;
-    flex-direction: row;     
-    align-items: center;    
-    justify-content: center;  
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     font-weight: 600;
     margin: 20px 0;
     text-align: center;
     padding: 30px 0;
-    gap: 300px; 
+    gap: 60px;
 }
-
-.main-brands,.main-p,.main-form {
-    width: auto;           
+.main-brands, .main-p, .main-form {
+    width: auto;
     max-width: none;
-    margin-bottom: 0;  
-    font-size: 30px;      
+    margin-bottom: 0;
+    font-size: 30px;
 }
 
-.h1-destaque{
+.h1-destaque {
     text-align: center;
     margin: 0;
     color: var(--beige);
@@ -89,124 +120,117 @@ h1{
     background: var(--deep-purple);
 }
 
-.container{
+.container {
     width: 100%;
-    height: 80vh;
+    height: auto;
     position: relative;
 }
-.slider{
+.slider {
     margin: 0 auto;
-    width: 800px;        
-    height: 800px;        
+    width: 100%;
+    max-width: 800px;
+    height: auto;
     display: flex;
-    overflow-x: hidden; 
+    overflow-x: hidden;
     position: relative;
-
 }
 .destaque-img {
-    width: 800px;        
-    height: 800px;        
+    width: 100%;
+    max-width: 800px;
+    height: auto;
     object-fit: cover;
-    flex-shrink: 0;       
+    flex-shrink: 0;
     display: block;
 }
 
-#previous, #next{
+#previous, #next {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background: var(--deep-purple);
-
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-
     top: calc(50% - 25px);
     left: 30px;
     cursor: pointer;
 }
-#next{
+#next {
     left: auto;
     right: 30px;
 }
-.dots-container{
+.dots-container {
     display: flex;
     justify-content: center;
     margin: 20px auto;
-
 }
-.dot{
+.dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
     background: rgb(194, 182, 160);
     margin: 0 10px;
+}
+.dot.active {
+    background: var(--deep-purple);
+}
 
-    &.active{
-        background: var(--deep-purple);
+/* RESPONSIVIDADE */
+@media (max-width: 1000px) {
+    .main .main-container .img-container {
+        width: 350px;
+        height: 350px;
+    }
+    .slider, .destaque-img {
+        max-width: 100%;
+        height: auto;
     }
 }
-/*RESPONSIVIDADE*/
-@media (max-width: 1000px){
-    header .container{
-        width: 100%;        
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 40px;
+        padding: 15px 10px;
     }
-    
-    nav ul a{
+    .main-highlights {
+        flex-direction: column;
+        gap: 2em;
+    }
+    .main-brands, .main-p, .main-form {
         font-size: 18px;
     }
-
-    nav{
-        padding: 0 30px;
-    }    
 }
-/*TABLET*/
-@media (max-width: 767px){
-    
-    header .container img{
-        display: inline;
-        margin-bottom: 70px;
-    }    
-    nav ul{
-        padding: 0;
-    }     
-} 
-/*CELULAR*/
-@media (max-width: 480px){
-    html,body{
+
+@media (max-width: 480px) {
+    html, body {
         overflow-x: hidden;
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         background: var(--beige);
-        margin-bottom: calc(var(--menu-height)+50px);
         font-family: sans-serif;
-       
     }
-
-    header .container{
-        padding: 0 40px;
-    }      
-    h1{        
+    h1 {
         font-size: 35px;
-        padding: 20px 0 0;        
-    } 
-    #icon{
+        padding: 20px 0 0;
+    }
+    #icon {
         margin: 0;
         width: 50px;
         display: flex;
-        background: var(--deep-purple);      
+        background: var(--deep-purple);
     }
-    sva{
-        border-right: 1px solid var(--deep-purple);
-    } 
-    #main{
-               
+    #main {
         padding: 0;
     }
-    #list-main{        
-        display: none;
+    #list-main {
+        display: flex;
+        font-size: 25px;
+        gap: 40px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.5s;
         flex-direction: column;
         background: var(--wid);
         position: absolute;
@@ -215,16 +239,18 @@ h1{
         width: 100vw;
         z-index: 1000;
         padding: 0;
-        margin: 20px 0 0 0;        
+        margin: 20px 0 0 0;
+     
     }
-    #main.active #list-main{
-        display: flex;
-    }          
-    #list-main a{
-        color: var(--deep-purple);        
+    #main.active #list-main {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    #list-main a {
+        color: var(--deep-purple);
         font-size: 20px;
-    }     
-    .main-items{
+    }
+    .main-items {
         height: 50px;
         margin: 0;
         border-top: 1px solid var(--deep-purple);
@@ -233,20 +259,18 @@ h1{
         padding: 0 15px;
         background: var(--wid);
         transition: background 0.2s;
-    }   
+    }
+    .main-items a {
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+        transition: color 0.2s;
+    }
     .main-items:hover {
         background: var(--pink);
-    }  
-    .main{
-        padding: 20px 0;
-    }    
-    .main-highlights{  
-        padding: 10px ;         
-        gap: 2em;
     }
-    .main-brands,.main-p,.main-form {
-        margin: 0 10px 20px 10px;
-        font-size: 10px;      
+    .main-items:hover a {
+        color: var(--wid) !important;
     }
     .main-container {
         display: flex;
@@ -255,47 +279,46 @@ h1{
         justify-content: center;
     }
     .main .main-container .img-container {
-        width: 350px;
+        width: 300px;
+        height: 300px;
         margin: 0 auto;
         display: block;
         padding: 20px;
-
-    }  
-     
-    .h1-destaque{
+        max-width: 100%;
+    }
+    .h1-destaque {
         margin: 20px 0;
         font-size: 30px;
         padding: 15px 10px;
     }
-    .container{
+    .container {
         width: 100%;
         height: auto;
     }
-    .slider{
-        width: 100%;        
-        height: auto;        
+    .slider {
+        width: 100%;
+        height: auto;
     }
     .destaque-img {
-        width: 100%;        
-        height: auto;        
+        width: 100%;
+        height: auto;
     }
-    #previous, #next{
+    #previous, #next {
         width: 40px;
         height: 40px;
         top: calc(50% - 20px);
         left: 10px;
     }
-    #next{
+    #next {
         right: 10px;
         left: auto;
     }
-    .dots-container{
+    .dots-container {
         margin: 10px auto;
     }
-    .dot{
+    .dot {
         width: 8px;
         height: 8px;
         margin: 0 5px;
     }
-
 }
