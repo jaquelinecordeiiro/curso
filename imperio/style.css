@@ -21,13 +21,20 @@ html, body {
 .header {
     width: 100%;
     background: var(--deep-purple);
+
+    top: 0;
+    z-index: 1000;
+    position: fixed;    
 }
 h1 {
     text-align: center;
     margin: 0;
     color: var(--wid);
-    padding: 25px 35px;
-    font-size: 60px;
+    padding: 10px 20px;
+    font-size: 50px;
+}
+.main {
+    padding-top: 100px; /* ajuste conforme a altura real do seu header */
 }
 #icon {
     display: none;
@@ -41,6 +48,7 @@ h1 {
     color: var(--wid);
     font-size: 30px;
     list-style: none;
+
 }
 
 #list-main a {
@@ -81,6 +89,8 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 100px;
+    padding-bottom: 20px;
 }
 .main .main-container .img-container {
     width: 450px;
