@@ -222,6 +222,10 @@ h1 {
     text-align: center;
     color: var(--rose-gold);
 }
+.footer-hr a{
+    color: var(--rose-gold);
+    text-decoration: none;
+}
 
 
 /* RESPONSIVIDADE */
