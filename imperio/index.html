@@ -10,59 +10,114 @@
 </head>
 <body>
     <header class="header">
-        <h1>IMPÉRIO DA NADJA</h1>
-        <nav class="header-main">
-            <ul class="list-main">
-                <il class="main-items">Lançamentos</il>
-                <il class="main-items">Promos</il>
-                <il class="main-items">kits</il>
-                <il class="main-items">Perfumaria</il>
-                <il class="main-items">Corpo e Banho</il>
-                <il class="main-items">Make</il>
-                <il class="main-items">Cabelo</il>
-                <il class="main-items">Skincare</il>
-                <il class="main-items">Infantil</il>
-                <il class="main-items">Masculino</il>
-                <il class="main-items">Casa</il>
-                <il class="main-items">Roupas</il>
-                <il class="main-items">Chocolates</il>
+        <h1>IMPÉRIO DA NADJA</h1>  
+        
+        <nav id="main">
+            <i id="icon" data-feather="menu"></i>
+            <ul id="list-main">
+                <li class="main-items"><a href="paginas/lancamentos.html">Lançamentos</a></li>
+                <li class="main-items"><a href="paginas/promos.html">Promoções</a></li>
+                <li class="main-items"><a href="">Kits</a></li>
+                <li class="main-items"><a href="">Perfumaria</a></li>
+                <li class="main-items"><a href="">Corpo e Banho</a></li>
+                <li class="main-items"><a href="">Make</a></li>
+                <li class="main-items"><a href="">Cabelo</a></li>
+                <li class="main-items"><a href="">Skincare</a></li>
+                <li class="main-items"><a href="">Infantil</a></li>
+                <li class="main-items"><a href="">Masculino</a></li>
+                <li class="main-items"><a href="">Casa</a></li>
+                <li class="main-items"><a href="">Roupas</a></li>
+                <li class="main-items"><a href="">Chocolates</a></li>
             </ul>
         </nav>
     </header>
     <main class="main">
-        <div class="main-container">
-            <img class="img-container" src="imagens/perfume.png" alt="">
-            <img class="img-container" src="imagens/roupas.png" alt="">
-            <img class="img-container" src="imagens/chocolate.png" alt="">
-        </div>
-        <div class="main-highlights">
-            <h2 class="main-brands">DIVERSAS MARCAS</h2>
-            <p>ENTREGA GRÁTIS <br>    
-            ENTREGAS PRESENCIAIS*</p>
-            <form>
-                <input type="text" name="pesquisa" placeholder="O que você deseja hoje?">
-                <button type="submit">Pesquisar</button>
-            </form>
-        </div>
-    </main>
-    <h1 class="destaque">PRODUTOS EM DESTAQUES</h1>
-
-    <div class="container">
-        
-        <div id="slider" class="slider">
-            <img class="destaque-img" src="imagens/kit.png" alt="">
-            <img class="destaque-img" src="imagens/kit-mae.png" alt="">
-            <img class="destaque-img" src="imagens/kit2.png" alt="">
-            <img class="destaque-img" src="imagens/71806mz208L._AC_SL1500_.jpg" alt="" >
-            <img class="destaque-img" src="imagens/61XS5txXTxL._AC_SL1500_.jpg" alt="">
-            <img class="destaque-img" src="imagens/61UreEwHjmL._AC_SL1200_.jpg" alt="">
-            <img class="destaque-img" src="imagens/kit4.png" alt="">
-        </div>
-        <img id="previous" src="imagens/seta-esquerda.png" alt="">
-        <img id="next" src="imagens/seta-direita.png" alt=""> 
-    </div>
-       
+            <section>
+                <div class="main-container">
+                    <img class="img-container" src="imagens/perfume.png" alt="">
+                    <img class="img-container" src="imagens/roupas.png" alt="">
+                    <img class="img-container" src="imagens/chocolate.png" alt="">
+                </div>
+            </section>
+            <section>
+                <div class="main-highlights">
+                    <h2 class="main-brands">DIVERSAS MARCAS</h2>
+                    <p class="main-p">ENTREGAS PRESENCIAIS GRÁTIS</p>
+                    <form class="main-form">
+                        <input type="text" name="pesquisa" placeholder="O que você deseja hoje?">
+                        <button type="submit">Pesquisar</button>
+                    </form>
+                </div>
+            </section>
     
+        <h1 class="h1-destaque">PRODUTOS EM DESTAQUES</h1>
+
+        <section>
+            <div class="container">
+            
+                <div class="slider" id="slider" >
+                    <img src="imagens/imagem1.jpg" class="destaque-img" >
+                    <img src="imagens/imagem2.jpg" class="destaque-img" >
+                    <img src="imagens/imagem3.jpg" class="destaque-img" >
+                    <img src="imagens/imagem4.jpg" class="destaque-img" > 
+                    <img src="imagens/imagem5.png" class="destaque-img" >
+                    <img src="imagens/imagem6.png" class="destaque-img" >
+                    <img src="imagens/imagem7.png" class="destaque-img" >
+                </div>
+                <img id="previous" src="imagens/seta-esquerda.png" alt="">
+                <img id="next" src="imagens/seta-direita.png" alt="">
+                <div class="dots-container">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </section>
+    </main> 
+    <footer>
+        <div class="footer-container">
+            <div class="footer-box">docker run -it --rm --entrypoint sh node:24-alpine
+docker run -it --rm --entrypoint sh node:24-alpine
+
+                <h3 class="footer-h3">FALE CONOSCO</h3>
+                <a href="https://api.whatsapp.com/send/?phone=5582993715723&text&type=phone_number&app_absent=0" target="_blank">
+                    <i class="phone" data-feather="phone"></i>
+                    Telefone: (82) 99371-5723
+                </a>
+                <p class="footer-p">E-mail:</p>            
+            </div>
+            <div class="footer-icons">
+                <h3 class="footer-h3">SIGA NOSSAS REDES SOCIAIS</h3>
+                <a href="https://www.instagram.com/imperiodanadja/" target="_blank">
+                    <i data-feather="instagram" ></i>
+                </a>
+                <i data-feather="facebook"></i>
+                <i data-feather="twitter"></i>
+                <i data-feather="youtube"></i>
+            </div>
+            <div class="footer-box">
+                <h3 class="footer-h3">INSTITUCIONAL</h3>
+                <p class="footer-p">Quem somos</p>
+                <p class="footer-p">Política de privacidade</p>
+            </div>
+            <div class="footer-box">
+                <h3 class="footer-h3">FORMAS DE PAGAMENTO</h3>
+                <img class="footer-img" src="imagens/pagamentos.png" alt="">
+
+            </div>
+        </div>        
+        <p class="footer-hr">Mode by  <a href="https://jaquelinecordeiiro.github.io/curso/portifolio/">Jaqueline Cordeiro</a> - 2025</p>
+    </footer>
+
+    <script src="https://unpkg.com/feather-icons"></script>      
+    <script>
+        feather.replace();
+    </script>
+
     
     <script src="index.js"></script>       
 </body>

@@ -1,48 +1,92 @@
 const previousEl = document.getElementById('previous');
 const nextEl = document.getElementById('next');
 const sliderEl = document.getElementById('slider');
+
+const iconEl = document.getElementById('icon');
+const mainEl = document.getElementById('main');
+
+iconEl.addEventListener('click', () => {
+    mainEl.classList.toggle('active');
+});
+
 let interval = undefined;
 let timeout = undefined;
+let selectedImgIndex = 0;
 
-previousEl.addEventListener('click', onPreviousClick)
-nextEl.addEventListener('click', onNextClick)
+previousEl.addEventListener('click', onPreviousClick);
+nextEl.addEventListener('click', onNextClick);
+
 
 autoScroll();
 
-function onPreviousClick(){
-    const sliderWidth = sliderEl.offsetWidth;
-    sliderEl.scrollLeft -= sliderWidth;
+
+function onNextClick() {
+    const images = sliderEl.querySelectorAll('.destaque-img');
+    const totalImages = images.length;
+    selectedImgIndex++;
+    if (selectedImgIndex >= totalImages) {
+        selectedImgIndex = 0; // volta para a primeira imagem
+    }
+    updateSlider();
     handleSliderClick();
 }
 
-function onNextClick(){
-    const sliderWidth = sliderEl.offsetWidth;
-    sliderEl.scrollLeft += sliderWidth;
+function onPreviousClick() {
+    const images = sliderEl.querySelectorAll('.destaque-img');
+    const totalImages = images.length;
+    selectedImgIndex--;
+    if (selectedImgIndex < 0) {
+        selectedImgIndex = totalImages - 1; // volta para a última imagem
+    }
+    updateSlider();
     handleSliderClick();
 }
+function updateSlider() {
+    const images = sliderEl.querySelectorAll('.destaque-img');
+    const totalImages = images.length;
 
-function handleSliderClick(){
+    // Garante que o índice fique dentro dos limites
+    if (selectedImgIndex < 0) selectedImgIndex = 0;
+    if (selectedImgIndex >= totalImages) selectedImgIndex = totalImages - 1;
+
+    const sliderWidth = sliderEl.offsetWidth;
+    sliderEl.scrollTo({
+        left: selectedImgIndex * sliderWidth,
+        behavior: 'smooth'
+    });
+
+    handActiveDot();
+}
+
+function handleSliderClick() {
     clearTimeout(timeout);
     clearInterval(interval);
     interval = undefined;
-    setTimeout( () => {
+    timeout = setTimeout(() => {
         autoScroll();
-    }, 10000);    
+    }, 10000);
+}
+
+function handActiveDot() {
+    const lis = Array.from(document.getElementsByClassName('dot'));
+    lis.forEach(el => el.classList.remove('active'));
+    if (lis[selectedImgIndex]) {
+        lis[selectedImgIndex].classList.add('active');
+    }
 }
 
 function autoScroll() {
-    if(interval) return;
+    if (interval) return;
 
-    interval = setInterval( () => {
-        const sliderWidth = sliderEl.offsetWidth;
-        const numberOfImages = sliderEl.childElementCount;
-        const selectedImage = (sliderEl.scrollLeft / sliderWidth) + 1;
+    interval = setInterval(() => {
+        const images = sliderEl.querySelectorAll('.destaque-img');
+        const totalImages = images.length;
 
-        if(numberOfImages === selectedImage) {
-            sliderEl.scrollLeft = 0;
-            return;
+        selectedImgIndex++;
+        if (selectedImgIndex >= totalImages) {
+            selectedImgIndex = 0;
         }
-        
-        sliderEl.scrollLeft += sliderWidth;
+        updateSlider();
     }, 5000);
 }
+
