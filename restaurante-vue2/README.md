@@ -1,4 +1,4 @@
-# restaurante
+# restaurante-vue2
 
 ## Project setup
 ```
