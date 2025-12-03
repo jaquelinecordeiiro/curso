@@ -1,6 +1,13 @@
 <template>
     <div class="category-menu">
 
+      <ul>       
+          <li v-for="category in categoriesList" :key="category.id">
+            <component : is="category.icon" />
+            <p>{{ category.name }}</p>
+        </li>
+      </ul>
+
     </div>
 </template>
 
@@ -21,6 +28,17 @@ export default {
     Deserts,
     Drinks,
     Burguer,
+  },
+  data() {
+    return {
+      categoriesList: [
+        { name: 'Pizza', icon: Pizza, id: 'piza' },
+        { name: 'Combos', icon: Combo, id: 'combos' },
+        { name: 'Doces', icon: Deserts, id: 'deserts' },
+        { name: 'Bebidas', icon: Drinks, id: 'drinks' },
+        { name: 'Burguers', icon: Burguer, id: 'burguer' },
+      ],
+    };
   },
 };
 </script>
