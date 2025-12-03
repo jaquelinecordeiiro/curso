@@ -3,7 +3,7 @@
 
       <ul>       
           <li v-for="category in categoriesList" :key="category.id">
-            <component : is="category.icon" />
+          <component :is="category.icon" />
             <p>{{ category.name }}</p>
         </li>
       </ul>
@@ -32,11 +32,11 @@ export default {
   data() {
     return {
       categoriesList: [
-        { name: 'Pizza', icon: Pizza, id: 'piza' },
-        { name: 'Combos', icon: Combo, id: 'combos' },
-        { name: 'Doces', icon: Deserts, id: 'deserts' },
-        { name: 'Bebidas', icon: Drinks, id: 'drinks' },
-        { name: 'Burguers', icon: Burguer, id: 'burguer' },
+        { label: 'Pizza', icon: Pizza, id: 'piza' },
+        { label: 'Combos', icon: Combo, id: 'combos' },
+        { label: 'Doces', icon: Deserts, id: 'deserts' },
+        { label: 'Bebidas', icon: Drinks, id: 'drinks' },
+        { label: 'Burguers', icon: Burguer, id: 'burguer' },
       ],
     };
   },
