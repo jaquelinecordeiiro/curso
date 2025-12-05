@@ -4,8 +4,7 @@
         "id": "1",
         "name": "Duplo Burger",
         "description": "Pão, maionese, 2 carnes de 180g, alface, tomate, bacon e cebola roxa.",
-        "price": 25.0,
-        "image": "classic-burger.jpg",
+        "price": 25.0,        
         "offer": false
     },
     {
@@ -13,7 +12,6 @@
         "name": "Triplo Burguer",
         "description": "Pão, maionese, 2 carnes de 180g, alface, tomate, bacon e cebola roxa.",
         "price": 32.0,
-        "image": "veggie-burger.jpg",
         "offer": false
 
     },
@@ -22,7 +20,6 @@
         "name": "Chicken Burger",
         "description": "Pão, maionese, 2 carnes de 180g, alface, tomate, bacon e cebola roxa.",
         "price": 16.0,
-        "image": "chicken-burger.jpg",
         "offer": false
     },
     {
@@ -30,7 +27,6 @@
         "name": "Kids Burguer",
         "description": "Pão, maionese, 2 carnes de 180g, alface, tomate, bacon e cebola roxa.",
         "price": 12.0,
-        "image": "double-burger.jpg",
         "offer": false
     },  
     {
@@ -38,7 +34,6 @@
         "name": "Costela Burguer",
         "description": "Pão, maionese, 2 carnes de 180g, alface, tomate, bacon e cebola roxa.",
         "price":35.0,
-        "image": "double-burger.jpg",
         "offer": false
     } ,  
     {
@@ -46,7 +41,6 @@
         "name": "Picanha Burguer",
         "description": "Pão, maionese, 2 carnes de 180g, alface, tomate, bacon e cebola roxa.",
         "price":42.0,
-        "image": "double-burger.jpg",
         "offer": false
     }       
   ],
