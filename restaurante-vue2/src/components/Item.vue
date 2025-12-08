@@ -1,5 +1,6 @@
 <template>
   <div class="item">
+    <div class="item--tag" v-if="item.offer">Oferta</div>
     <h2 class="item--name">{{ item.name }}</h2>
     <p class="item--description">{{ item.description }}</p>
     <span class="item--price">Price: ${{ item.price }}</span>
@@ -21,8 +22,19 @@ export default {
         height: 290;
         border-radius: 8px;
         background: white;
-
-
+        position: relative;
+        
+         &--tag{
+          position: absolute;
+          background: @pink;
+          border-radius: 8px;
+          color: white;
+          top: 15px;
+          right: 15px;
+          font-weight: 500;
+          font-size: 12px;
+          padding: 5px 10px;
+        }
         &--name {
             font-weight: 600;
             font-size: 18px;
@@ -38,5 +50,6 @@ export default {
             font-weight: 600;
 
         }
+       
 }
 </style>
