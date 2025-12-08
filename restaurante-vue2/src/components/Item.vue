@@ -1,10 +1,15 @@
 <template>
   <div class="item">
-    <div class="item--tag" v-if="item.offer">Oferta</div>
-    <img class="item--img" src="../assets/imagens/burguer.png" alt="" />
-    <h2 class="item--name">{{ item.name }}</h2>
-    <p class="item--description">{{ item.description }}</p>
-    <span class="item--price">Preço: ${{ item.price | currency }}</span>
+    <div class="container">
+      <div class="item--tag" v-if="item.offer">Oferta</div>
+      <img class="item--img" src="../assets/imagens/burguer.png" alt="" />
+    </div>
+    
+    <div class="content">
+      <h2 class="item--name">{{ item.name }}</h2>
+      <p class="item--description">{{ item.description }}</p>
+      <span class="item--price">Preço: ${{ item.price | currency }}</span>
+    </div>
   </div>
 </template>
 
@@ -65,6 +70,34 @@ export default {
       font-size: 18px;
       font-weight: 600;
       margin: 8px auto;    
+    }
+
+    @media @tablets {
+      width: 100%;
+      height: fit-content;
+      border: 1px solid @light-grey;
+      display: flex;
+      margin: 10px, 0;
+      padding: 5px 10px;
+
+      &--img{
+        height: 60px;
+        margin-right: 15px;
+        order: 0;
+      }
+      &--price{
+        text-align: right;
+        margin: 0 auto;
+      }
+
+      &--tag {
+        position: static;
+        order: 1;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
     }
 }
 </style>

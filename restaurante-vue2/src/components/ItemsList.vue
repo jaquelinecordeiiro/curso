@@ -33,8 +33,11 @@ export default {
     
 }
 @media @tablets  {
-  flex-wrap: wrap;
-  margin: 20px;
+  .items-list {
+    flex-direction: column;
+    margin: 20px;
+
+  }
 } 
   
 </style>
