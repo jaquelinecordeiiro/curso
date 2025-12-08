@@ -20,10 +20,13 @@ export default {
 
 }
 </script>
-<style scoped lang="less">
+<style scoped lang="less" >
   .home {
     display: flex;
- 
+    
+    @media @tablets {
+      flex-direction: column;
+    }
   }
 
 </style>
