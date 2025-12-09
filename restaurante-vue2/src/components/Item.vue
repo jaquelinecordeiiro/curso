@@ -77,13 +77,13 @@ export default {
       height: fit-content;
       border: 1px solid @light-grey;
       display: flex;
-      margin: 10px, 0;
+      margin: 10px 0;
       padding: 5px 10px;
 
       &--img{
         height: 60px;
-        margin-right: 15px;
         order: 0;
+        margin: 0 0 10px 0;
       }
       &--price{
         text-align: right;
@@ -93,10 +93,14 @@ export default {
       &--tag {
         position: static;
         order: 1;
+        width: fit-content;
       }
       .container {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
       }
     }
 }
