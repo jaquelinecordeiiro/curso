@@ -3,13 +3,17 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-const store = new Vuex.Store({
+export const store = new Vuex.Store({
   state: {
-    count: 0
+    selectedCategoryId: null,
   },
   mutations: {
-    increment(state) {
-      state.count++
+    changeCategory(state, id) {
+      state.selectedCategoryId = id}
+  },
+  actions: {
+    changeCategory( context, id) {
+      context.commit('changeCategory', id)
     }
   }
-})
+});

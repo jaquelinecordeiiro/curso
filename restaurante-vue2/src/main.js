@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import App from './App.vue'
 import './assets/css/global.less'
 import router from './router'
+import { store } from './srote/store'
 
 Vue.use(Vuex)
 
@@ -10,5 +11,6 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')

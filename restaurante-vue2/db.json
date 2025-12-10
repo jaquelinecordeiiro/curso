@@ -44,6 +44,22 @@
         "offer": false
     }       
   ],
+"pizza": [
+  {
+      "id": "1",
+      "name": "Calabresa",
+      "description": "Calabresa fatiada, cebola, molho, queijo e orégano.",
+      "price":42.0,
+      "offer": false
+  } ,
+  {
+      "id": "2",
+      "name": "Muçarela",
+      "description": "Queijo Muçarela fatiado, molho e orégano.",
+      "price":40.0,
+      "offer": false
+  }   
+],
   "comments": [
     { "id": "1", "text": "a comment about post 1", "postId": "1" },
     { "id": "2", "text": "another comment about post 1", "postId": "1" }

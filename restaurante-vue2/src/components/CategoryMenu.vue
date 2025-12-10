@@ -33,18 +33,22 @@ export default {
   data() {
     return {
       categoriesList: [
-        { label: "Pizza", icon: Pizza, id: "pizza" },
-        { label: "Bebidas", icon: Drinks, id: "drinks" },
-        { label: "Doces", icon: Deserts, id: "deserts" },
-        { label: "Combos", icon: Combo, id: "combos" },
-        { label: "Burguers", icon: Burguer, id: "burguer" },
+        { label: "Pizza", icon: Pizza, id: 'pizza' },
+        { label: "Bebidas", icon: Drinks, id: 'drinks' },
+        { label: "Doces", icon: Deserts, id: 'deserts' },
+        { label: "Combos", icon: Combo, id: 'combos' },
+        { label: "Burguers", icon: Burguer, id: 'burguers' },
       ],
-      selectedCategory: "pizza",
+      selectedCategory: "",
     };
+  },
+  mounted() {
+    this.onCategoryClick("pizza");
   },
   methods: {
     onCategoryClick(id) {
       this.selectedCategory = id;
+      this.$store.dispatch('changeCategory', id);
     },
     isActive(id) {
       return this.selectedCategory === id;
