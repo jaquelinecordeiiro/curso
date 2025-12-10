@@ -23,13 +23,13 @@ export default {
   computed: {
     selectedCategory: {
       get() {
-        return this.$store.state.selectedCategory;
+        return this.$store.state.selectedCategoryId;
       }
     }
   },
   methods: {
     getItemsList() {
-      axios.get('http://localhost:3000/${this.selectedCategory}').then((response) => {
+      axios.get(`http://localhost:3000/${this.selectedCategory}`).then((response) => {
         this.ItemsList = response.data;
       });
     }
