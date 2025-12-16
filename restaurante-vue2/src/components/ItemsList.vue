@@ -25,10 +25,8 @@ export default {
   created() {},
 
   computed: {
-    selectedCategory: {
-      get() {
-        return this.$store.state.selectedCategoryId;
-      }
+    selectedCategory() {
+     return this.$store.state.selectedCategoryId;
     }
   },
   methods: {
@@ -41,7 +39,7 @@ export default {
         this.ItemsList = response.data;
         this.isLoading = false;
       });
-      }, 2000);      
+      }, 500);      
     }
   },
   watch: {

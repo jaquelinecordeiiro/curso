@@ -2,7 +2,7 @@
   <div class="item">
     <div class="container">
       <div class="item--tag" v-if="item.offer">Oferta</div>
-      <img class="item--img" src="../assets/imagens/burguer.png" alt="" />
+      <img class="item--img" :src="imagePath" alt="" v-if="imagePath" />
     </div>
     
     <div class="content">
@@ -25,6 +25,20 @@ export default {
   },
   props: {
     item: {},
+  },
+  computed: {
+    selectedCategory() {
+     return this.$store.state.selectedCategoryId;
+    },
+    imagePath() {
+      if (!this.selectedCategory || !this.item || !this.item.id) return "";
+      try {
+        return require(`../assets/imagens/${this.selectedCategory}/${this.item.id}.png`);
+      } catch (e) {
+        // fallback: return empty string (no image) so <img v-if> hides it
+        return "";
+      }
+    },
   },
 };
 </script>
@@ -52,7 +66,8 @@ export default {
     }
     &--img {
       display: block;
-      margin: 20px auto;
+      margin: auto;
+      width: 100%;
     }
     &--name {
       font-weight: 600;
