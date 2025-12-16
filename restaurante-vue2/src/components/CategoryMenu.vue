@@ -36,7 +36,7 @@ export default {
         { label: "Pizza", icon: Pizza, id: 'pizza' },
         { label: "Bebidas", icon: Drinks, id: 'drinks' },
         { label: "Doces", icon: Deserts, id: 'deserts' },
-        { label: "Combos", icon: Combo, id: 'combos' },
+        { label: "Combo", icon: Combo, id: 'combo' },
         { label: "Burguers", icon: Burguer, id: 'burguers' },
       ],
       selectedCategory: "",
