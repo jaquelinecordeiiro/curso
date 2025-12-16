@@ -1,70 +1,117 @@
 {
   "burguers": [
     {
-        "id": "1",
-        "name": "Duplo Burger",
-        "description": "Pão, maionese, 2 carnes de 180g, alface, tomate, bacon e cebola roxa.",
-        "price": 25.0,        
-        "offer": false
+      "id": "1",
+      "name": "Duplo Burger",
+      "description": "Pão, maionese, 2 carnes de 180g, alface, tomate, bacon e cebola roxa.",
+      "price": 25.0,
+      "offer": false
     },
     {
-        "id": "2",
-        "name": "Triplo Burguer",
-        "description": "Pão, maionese, 2 carnes de 180g, alface, tomate, bacon e cebola roxa.",
-        "price": 32.0,
-        "offer": false
-
+      "id": "2",
+      "name": "Triplo Burguer",
+      "description": "Pão, maionese, 2 carnes de 180g, alface, tomate, bacon e cebola roxa.",
+      "price": 32.0,
+      "offer": false
     },
     {
-        "id": "3",
-        "name": "Chicken Burger",
-        "description": "Pão, maionese, 2 carnes de 180g, alface, tomate, bacon e cebola roxa.",
-        "price": 16.0,
-        "offer": false
+      "id": "3",
+      "name": "Chicken Burger",
+      "description": "Pão, maionese, 2 carnes de 180g, alface, tomate, bacon e cebola roxa.",
+      "price": 16.0,
+      "offer": false
     },
     {
-        "id": "4",
-        "name": "Kids Burguer",
-        "description": "Pão, maionese, 2 carnes de 180g, alface, tomate, bacon e cebola roxa.",
-        "price": 12.0,
-        "offer": false
-    },  
-    {
-        "id": "5",
-        "name": "Costela Burguer",
-        "description": "Pão, maionese, 2 carnes de 180g, alface, tomate, bacon e cebola roxa.",
-        "price":35.0,
-        "offer": true
-    } ,  
-    {
-        "id": "6",
-        "name": "Picanha Burguer",
-        "description": "Pão, maionese, 2 carnes de 180g, alface, tomate, bacon e cebola roxa.",
-        "price":42.0,
-        "offer": false
-    }       
+      "id": "4",
+      "name": "Picanha Burguer",
+      "description": "Pão, maionese, 2 carnes de 180g, alface, tomate, bacon e cebola roxa.",
+      "price": 42.0,
+      "offer": false
+    }
   ],
-"pizza": [
-  {
+  "pizza": [
+    {
       "id": "1",
       "name": "Calabresa",
       "description": "Calabresa fatiada, cebola, molho, queijo e orégano.",
-      "price":42.0,
+      "price": 42.0,
       "offer": false
-  } ,
-  {
+    },
+    {
       "id": "2",
       "name": "Muçarela",
       "description": "Queijo Muçarela fatiado, molho e orégano.",
-      "price":40.0,
+      "price": 40.0,
       "offer": false
-  }   
-],
-  "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+    },
+    {
+      "id": "3",
+      "name": "4 Queijos",
+      "description": "4 tipos de queijos, molho e orégano.",
+      "price": 40.0,
+      "offer": false
+    },
+    {
+      "id": "4",
+      "name": "Strogonoffe",
+      "description": "Strogonoffe de carne, molho e orégano.",
+      "price": 40.0,
+      "offer": false
+    }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "deserts": [
+    {
+      "id": 1,
+      "name": "Casquinha mista",
+      "description": "Casquinha mista de creme e chocolate",
+      "price": 4.5,
+      "offer": false
+    },
+    {
+      "id": 2,
+      "name": "Sorvete de morango",
+      "description": "Sorvete de morango na casquinha",
+      "price": 6.0,
+      "offer": false
+    },
+    {
+      "id": 3,
+      "name": "Milshake",
+      "description": "Milskahe de chocolate",
+      "price": 10.0,
+      "offer": false
+    }
+  ],
+  "drinks": [
+    {
+      "id": 1,
+      "name": "Coca-cola lata",
+      "description": "Lata 350ml",
+      "price": 4.5,
+      "offer": false
+    },
+    {
+      "id": 2,
+      "name": "Guaraná Lata",
+      "description": "Lata 350ml",
+      "price": 4.5,
+      "offer": false
+    }
+  ],
+  "combo": [
+    {
+      "id": 1,
+      "name": "Combo 1",
+      "description": "1 hamburguer duplo, 1 guaraná lata e 1 milkshake chocolate",
+      "price": 50.0,
+      "offer": false
+    },
+    {
+      "id": 2,
+      "name": "Combo 2",
+      "description": "2 pizzas",
+      "price": 45.0,
+      "offer": false
+    }
+  ]
 }

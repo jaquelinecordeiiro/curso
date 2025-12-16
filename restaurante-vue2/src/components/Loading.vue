@@ -19,7 +19,7 @@ export default {
         border: 3px solid @light-yellow;
         border-top-color: @yellow;
         animation: spin 1s linear infinite;
-        margin:auto;
+        margin: auto;
     }
     @keyframes spin {
         to{
