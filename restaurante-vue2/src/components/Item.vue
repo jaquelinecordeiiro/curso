@@ -31,22 +31,26 @@ export default {
      return this.$store.state.selectedCategoryId;
     },
     imagePath() {
-      if (!this.selectedCategory || !this.item || !this.item.id) return "";
       try {
-        return require(`../assets/imagens/${this.selectedCategory}/${this.item.id}.png`);
+        // tenta importar a imagem correspondente (id.png) dentro da pasta da categoria
+        return require(`@/assets/imagens/${this.selectedCategory}/${this.item.id}.png`);
       } catch (e) {
-        // fallback: return empty string (no image) so <img v-if> hides it
-        return "";
+        // se não existir, usa um fallback (logo do projeto) para evitar imagem quebrada
+        return require('@/assets/logo.png');
       }
     },
+  },
+  mounted() {
+    
+    console.log('Item mounted, imagePath =', this.imagePath);
   },
 };
 </script>
 
 <style lang="less" scoped>
 .item {
-  width: 215.9486083984375;
-  height: 290px;
+  width: 350px;
+  height: 390px;
   border-radius: 8px;
   background: white;
   position: relative;
