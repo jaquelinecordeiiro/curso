@@ -49,13 +49,16 @@ export default {
 
 <style lang="less" scoped>
 .item {
-  width: 350px;
+  width: 215.95px;
   height: 390px;
   border-radius: 8px;
   background: white;
   position: relative;
   margin: 20px;
   padding: 20px;
+
+  display: flex;
+  flex-direction: column;
 
     &--tag {
       position: absolute;
@@ -76,7 +79,7 @@ export default {
     &--name {
       font-weight: 600;
       font-size: 18px;
-      margin: 8px auto;
+      margin: 0;
     }
     &--description {
       font-size: 12px;
@@ -88,31 +91,42 @@ export default {
       color: @yellow;
       font-size: 18px;
       font-weight: 600;
-      margin: 8px auto;    
+      margin: 0;    
     }
+    .content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-top: 10px;
+      }
 
     @media @tablets {
       width: 100%;
       height: fit-content;
       border: 1px solid @light-grey;
       display: flex;
+      flex-direction: row;
       margin: 10px 0;
-      padding: 5px 10px;
+      padding: 10px 20px;
 
       &--img{
-        height: 60px;
+        width: 86px;
         order: 0;
         margin: 0 0 10px 0;
       }
       &--price{
         text-align: right;
-        margin: 0 auto;
+        margin: 5px 0 0 auto;
       }
 
       &--tag {
         position: static;
         order: 1;
         width: fit-content;
+      }
+      .content{
+        flex-grow: 1;
       }
       .container {
         display: flex;

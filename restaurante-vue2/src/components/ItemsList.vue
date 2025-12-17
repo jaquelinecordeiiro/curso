@@ -60,7 +60,8 @@ export default {
 @media @tablets  {
   .items-list {
     flex-direction: column;
-    margin: 20px;
+    margin: 0;
+    padding: 20px;
 
   }
 } 
