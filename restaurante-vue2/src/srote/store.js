@@ -5,7 +5,8 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
-    selectedCategoryId: null,
+    selectedCategoryId: '',
+    selectedCategory: '',
     cartList: [],
   },
   mutations: {
@@ -13,7 +14,8 @@ export const store = new Vuex.Store({
       state.selectedCategoryId = id;
     },
     addToCart(state, el) {
-      state.carList.push(el);
+      // salva a categoria atual no item para que a imagem no carrinho seja resolvida corretamente
+      state.cartList.push({ ...el, category: state.selectedCategoryId });
     },
   },
   actions: {
