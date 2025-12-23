@@ -1,5 +1,5 @@
 <template>
-  <div class="item">
+  <div class="item" @click="addToCart">
     <div class="container">
       <div class="item--tag" v-if="item.offer">Oferta</div>
       <img class="item--img" :src="imagePath" alt="" v-if="imagePath" />
@@ -43,6 +43,11 @@ export default {
   mounted() {
     
     console.log('Item mounted, imagePath =', this.imagePath);
+  },
+  methods: {
+    addToCart() {
+      this.$store.dispatch('addToCart', this.item);
+    },
   },
 };
 </script>
