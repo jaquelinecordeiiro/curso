@@ -1,5 +1,10 @@
 <template>
   <div class="item">
+    <div class="item--quantity">
+      <span class="buttons" @click="decreaseQuantity(item.id)">-</span>
+      <span class="number">{{ item.quantity }}</span>
+      <span class="buttons" @click="increaseQuantity(item.id)">+</span>
+    </div>
     <div class="item--img-container">
         <img class="item--img" :src="imagePath" />
     </div>
@@ -13,6 +18,11 @@
 </template>
 
 <script>
+const imagesContext = require.context('../assets/imagens', false, /\.png$/);
+const images = imagesContext.keys().reduce((acc, key) => { acc[key.replace('./','')] = imagesContext(key); return acc; }, {});
+
+import { mapActions } from 'vuex';
+
 export default {
   name: "CartItem",
   props: {
@@ -26,20 +36,16 @@ export default {
     },
   },
   computed: {
-    itemCategory() {
-      return (
-        this.item.category ||
-        this.$store.state.selectedCategoryId ||
-        this.$store.state.selectedCategory
-      );
-    },
     imagePath() {
-      try {
-        return require(`@/assets/imagens/${this.itemCategory}/${this.item.id}.png`);
-      } catch (e) {
-        return require("@/assets/logo.png");
-      }
+      const img = images[`${this.item.id}.png`];
+      return img ? img : images['0001.png'];
     },
+  },
+  methods: {
+    ...mapActions([
+      'increaseQuantity',
+      'decreaseQuantity',
+    ]),
   },
 };
 </script>
@@ -48,6 +54,24 @@ export default {
 .item {
   display: flex;
   margin: 10px;
+    &--quantity{
+      display: flex;
+      align-items: center;
+      padding-right: 40px;
+    }
+      .number{
+          font-size: 18px;
+          font-weight: 500;
+          width: 28px;
+          color: @yellow;
+          text-align: center;
+      }
+      .buttons{
+          font-size: 20px;
+          font-weight: 600;
+          padding: 0 10px;
+          cursor: pointer;
+      }
 
     &--img-container{
         border-radius: 4px;

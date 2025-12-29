@@ -14,6 +14,8 @@
 </template>
 
 <script>
+const imagesContext = require.context('../assets/imagens', false, /\.png$/);
+const images = imagesContext.keys().reduce((acc, key) => { acc[key.replace('./','')] = imagesContext(key); return acc; }, {});
 export default {
   name: "Item",
   filters: {
@@ -27,22 +29,10 @@ export default {
     item: {},
   },
   computed: {
-    selectedCategory() {
-     return this.$store.state.selectedCategoryId;
-    },
     imagePath() {
-      try {
-        // tenta importar a imagem correspondente (id.png) dentro da pasta da categoria
-        return require(`@/assets/imagens/${this.selectedCategory}/${this.item.id}.png`);
-      } catch (e) {
-        // se não existir, usa um fallback (logo do projeto) para evitar imagem quebrada
-        return require('@/assets/logo.png');
-      }
+      const img = images[`${this.item.id}.png`];
+      return img ? img : images['0001.png'];
     },
-  },
-  mounted() {
-    
-    console.log('Item mounted, imagePath =', this.imagePath);
   },
   methods: {
     addToCart() {
