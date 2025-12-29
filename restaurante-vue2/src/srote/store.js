@@ -19,6 +19,9 @@ export const store = new Vuex.Store({
     increaseQuantity(state, index) {
       ++state.cartList[index].quantity;
     },
+    decreaseQuantity(state, index) {
+      --state.cartList[index].quantity;
+    },
   },
   actions: {
     changeCategory(context, id) {
