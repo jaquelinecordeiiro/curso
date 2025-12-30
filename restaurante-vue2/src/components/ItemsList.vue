@@ -22,7 +22,9 @@ export default {
       isLoading: false
     };
   },
-  created() {},
+  created() {
+    this.getItemsList();
+  },
 
   computed: {
     selectedCategory() {
@@ -52,19 +54,26 @@ export default {
 
 <style lang="less" scoped>
 .items-list {
-    margin: 50px;
+    margin: 20px;
     display: flex;
     width: 100%;
     flex-wrap: wrap;
+    padding: 0;
   
 }
 @media @tablets  {
   .items-list {
     flex-direction: column;
     margin: 0;
-    padding: 20px;
+    padding: 16px;
 
   }
-} 
+}
+
+@media @smartphones {
+  .items-list {
+    padding: 8px;
+  }
+}
   
 </style>

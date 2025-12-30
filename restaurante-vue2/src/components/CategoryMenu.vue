@@ -115,7 +115,6 @@ export default {
 
     ul {
       display: flex;
-      justify-content: center;
       margin: 20px;
       overflow: scroll;
 
@@ -127,6 +126,24 @@ export default {
         }
       }
     }
+  }
+
+  @media @smartphones {
+    ul {
+      margin: 8px;
+      overflow-x: auto;
+    }
+
+    ul li {
+      min-width: 60px;
+      height: 70px;
+    }
+
+    ul li p {
+      font-size: 11px;
+    }
+
+    ul li svg { width: 20px; height: 20px; }
   }
 }
 </style>

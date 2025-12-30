@@ -131,5 +131,40 @@ export default {
         margin-right: 10px;
       }
     }
+
+    /* Smartphones tweaks */
+    @media @smartphones {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+
+      &--img {
+        width: 64px;
+        margin: 0 12px 0 0;
+      }
+
+      &--name {
+        font-size: 16px;
+      }
+
+      &--description {
+        font-size: 12px;
+      }
+
+      &--price {
+        font-size: 16px;
+      }
+
+      .container {
+        margin-right: 10px;
+      }
+
+      .content {
+        padding: 0;
+      }
+    }
 }
-</style>
+</style> 
