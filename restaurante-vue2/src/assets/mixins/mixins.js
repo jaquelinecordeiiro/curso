@@ -8,6 +8,9 @@ export default {
     isDesktop() {
       return this.windowWidth > 768;
     },
+    isSmallScreens() {
+      return !this.isDesktop();
+    },
     _onResize() {
       this.windowWidth = window.innerWidth;
     },

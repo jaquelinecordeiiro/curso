@@ -56,14 +56,22 @@ export const store = new Vuex.Store({
     }
   },
 
-  decreaseQuantity({ state, commit }, id) {
-    const index = state.cartList.findIndex(
-      cartItem => cartItem.id === id
-    );
-    if (index !== -1) {
-      commit("decreaseQuantity", index);
-    }
-  },
+decreaseQuantity({ state, commit }, id) {
+  const index = state.cartList.findIndex(
+    cartItem => cartItem.id === id
+  );
+  if (index !== -1) {
+    commit("decreaseQuantity", index);
+  }
+},
+},
+
+getters: {
+  getCartTotal(state) {
+    return state.cartList.reduce((acc, item) => {
+      return acc + (item.price * item.quantity);
+    }, 0);
+  }
 }
 
 });
