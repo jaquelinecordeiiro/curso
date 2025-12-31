@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Cart from '@/components/Cart.vue';
-import AddToCert from '@/components/AddToCart.vue';
+import AddToCart from '@/components/AddToCart.vue';
 
 Vue.use(VueRouter)
 
@@ -20,7 +20,7 @@ const routes = [
    {
     path: '/addToCart/:id',
     name: 'AddToCart',
-    component: AddToCert,
+    component: AddToCart,
     props: true
   },
   {

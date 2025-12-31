@@ -1,10 +1,6 @@
 <template>
   <div class="item">
-    <div class="item--quantity">
-      <button class="buttons" @click="decreaseQuantity(item.id)" :disabled="item.quantity === 0">-</button>
-      <span class="number">{{ item.quantity }}</span>
-      <button class="buttons" @click="increaseQuantity(item.id)">+</button>
-    </div>
+    <Quantity :item="item" class="item--quantity" />
     <div class="item--img-container">
         <img class="item--img" :src="imagePath" />
     </div>
@@ -22,9 +18,13 @@ const imagesContext = require.context('../assets/imagens', false, /\.png$/);
 const images = imagesContext.keys().reduce((acc, key) => { acc[key.replace('./','')] = imagesContext(key); return acc; }, {});
 
 import { mapActions } from 'vuex';
+import Quantity from './Quantity.vue';
 
 export default {
   name: "CartItem",
+  components: {
+    Quantity,
+  },
   props: {
     item: {},
   },

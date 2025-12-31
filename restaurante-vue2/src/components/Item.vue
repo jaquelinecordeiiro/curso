@@ -23,6 +23,7 @@ export default {
   mixins: [Mixins],
   filters: {
     currency(value) {
+      if (!value) return '0,00';
       return `RS  ${value.toLocaleString("pt-BR", {
         minimumFractionDigits: 2,
       })}`;
@@ -33,6 +34,7 @@ export default {
   },
   computed: {
     imagePath() {
+      if (!this.item || !this.item.id) return null;
       const img = images[`${this.item.id}.png`];
       return img ? img : images['0001.png'];
     },
