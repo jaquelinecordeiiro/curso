@@ -14,10 +14,13 @@
 </template>
 
 <script>
+  import Mixins from "@/assets/mixins/mixins.js";
+
 const imagesContext = require.context('../assets/imagens', false, /\.png$/);
 const images = imagesContext.keys().reduce((acc, key) => { acc[key.replace('./','')] = imagesContext(key); return acc; }, {});
 export default {
   name: "Item",
+  mixins: [Mixins],
   filters: {
     currency(value) {
       return `RS  ${value.toLocaleString("pt-BR", {
@@ -37,7 +40,10 @@ export default {
   methods: {
     addToCart() {
       this.$store.dispatch('addToCart', this.item);
+      if (this.isDesktop()) return;
+      this.$router.push({ name: 'AddToCart', params: { id: this.item.id } });
     },
+
   },
 };
 </script>
