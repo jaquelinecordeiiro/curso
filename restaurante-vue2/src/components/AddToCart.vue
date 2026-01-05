@@ -1,6 +1,6 @@
 <template>
   <div class="add-cart">
-    <router-link to="/" class="cart--go-back" v-if="isSmallScreens()"
+    <router-link to="/" class="add-cart--go-back" v-if="isSmallScreens()"
       >← Voltar</router-link
     >
     <Item :item="item" class="add-cart--item" />
@@ -110,7 +110,7 @@ export default {
 
 <style lang="less" scoped>
 
-.add--cart {
+.add-cart {
   padding: 50px 20px;
 
 &--go-back {
@@ -118,7 +118,7 @@ export default {
   font-size: 24px;
   margin-bottom: 50px;
   text-decoration: none;
-  color: black;
+  color: red;
 }
 &--item {
   margin-top: 50px;
