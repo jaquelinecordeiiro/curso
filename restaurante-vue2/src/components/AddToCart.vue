@@ -118,7 +118,7 @@ export default {
   font-size: 24px;
   margin-bottom: 50px;
   text-decoration: none;
-  color: red;
+  color: @yellow;
 }
 &--item {
   margin-top: 50px;
