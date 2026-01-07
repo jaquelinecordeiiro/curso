@@ -139,8 +139,8 @@ export default {
 &--observations {
   font-weight: 600;
   font-size: 18px;
-  margin-top: 30px;
-}
+  margin-top: 30px;   
+} 
 textarea {
   width: 100%;  
   border: 1px solid @light-grey;
