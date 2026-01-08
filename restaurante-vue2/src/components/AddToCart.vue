@@ -1,16 +1,15 @@
 <template>
   <div class="add-cart">
-    <router-link to="/" class="add-cart--go-back" v-if="isSmallScreens()"
-      >← Voltar</router-link
-    >
+    <router-link to="/" class="add-cart--go-back" v-if="isSmallScreens()">← Voltar</router-link>
     <Item :item="item" class="add-cart--item" />
 
     <div class="add-cart--container">
-        <span>Quantidade</span>
-        <Quantity :item="item" />
+      <span>Quantidade</span>
+      <Quantity :item="item" :useStore="false" />
     </div>
     <p class="add-cart--observations">Observações:</p>
-    <textarea v-model="observation" rows="10" placeholder="Adicione uma observação..."></textarea>
+    <textarea v-model="observation" rows="10" placeholder=""></textarea>
+    <button class="primary-button" @click="onAddToCartButtonClick">Adicionar ao carrinho</button>
 
   </div>
 </template>
@@ -64,7 +63,10 @@ export default {
       this.isLoading = true;
       try {
         const response = await axios.get(url);
-        this.item = response.data;
+        this.item = {
+          ...response.data,
+          quantity: 1
+        };
         return;
       } catch (error) {
         // Se 404, tenta buscar pelo id nas coleções conhecidas
@@ -95,6 +97,10 @@ export default {
         }
       }
       return null;
+    },
+    onAddToCartButtonClick() {
+      this.$store.dispatch("addToCart", this.item);
+      this.$router.push({ name: 'home' });
     }
   },
 
@@ -109,50 +115,63 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
 .add-cart {
   padding: 50px 20px;
 
-&--go-back {
-  font-weight: 600;
-  font-size: 24px;
-  margin-bottom: 50px;
-  text-decoration: none;
-  color: @yellow;
-}
-&--item {
-  margin-top: 50px;
-}
-&--container {
-  display: flex;
-  border: 1px solid @light-grey;
-  padding: 10px 20px;
-  border-radius: 8px;
-  margin: 20px 10px;
+  &--go-back {
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 50px;
+    text-decoration: none;
+    color: @yellow;
+  }
 
-  span {   
-    margin-right: auto;
+  &--item {
+    margin-top: 50px;
+  }
+
+  &--container {
+    display: flex;
+    border: 1px solid @light-grey;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+
+    span {
+      margin-right: auto;
+      font-weight: 600;
+      font-size: 18px;
+    }
+  }
+
+  &--observations {
     font-weight: 600;
     font-size: 18px;
+    margin-top: 30px;
+  }
+
+  textarea {
+    width: 100%;
+    border: 1px solid @light-grey;
+    border-radius: 8px;
+
+
+    &:focus {
+      outline: none;
+      border-color: @yellow;
+    }
+
+  }
+  button {
+    width: calc(100% - 40px);
+    position: fixed;
+    bottom: 30px;
+    left: 20px;
+    right: 20px;
+
+    &:hover {
+      background-color: darken(@yellow, 10%);
+    }
   }
 }
-&--observations {
-  font-weight: 600;
-  font-size: 18px;
-  margin-top: 30px;   
-}  
-
-textarea {
-  width: 100%;  
-  border: 1px solid @light-grey;
-  border-radius: 8px; 
-
-  
-  &:focus {
-    outline: none;
-    border-color: @yellow;
-  }
-}
-}
-
 </style>
