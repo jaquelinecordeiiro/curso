@@ -54,7 +54,7 @@ export const store = new Vuex.Store({
       cartItem => cartItem.id === id
     );
     if (index !== -1) {
-      commit("increaseQuantity", index);
+      commit("increaseQuantity", {index: index, quantity: 1});
     }
   },
 
