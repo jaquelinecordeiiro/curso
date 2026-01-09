@@ -57,7 +57,6 @@ export const store = new Vuex.Store({
       commit("increaseQuantity", {index: index, quantity: 1});
     }
   },
-
 decreaseQuantity({ state, commit }, id) {
   const index = state.cartList.findIndex(
     cartItem => cartItem.id === id
