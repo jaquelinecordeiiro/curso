@@ -8,6 +8,7 @@
     <div class="content">
       <h3 class="item--name">{{ item.name }}</h3>
       <a class="item--observation">Adicionar observação</a>
+      <p>{{item.observation}}</p>
     </div>
     <p class="item--price">{{ item.price | currency }}</p>
   </div>

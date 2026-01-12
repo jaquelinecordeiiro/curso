@@ -8,7 +8,7 @@
       <Quantity :item="item" :useStore="false" />
     </div>
     <p class="add-cart--observations">Observações:</p>
-    <textarea v-model="observation" rows="10" placeholder=""></textarea>
+    <textarea v-model="item.observation" rows="10" placeholder=""></textarea>
     <button class="primary-button" @click="onAddToCartButtonClick">Adicionar ao carrinho</button>
 
   </div>
@@ -30,7 +30,6 @@ export default {
   data() {
     return {
       item: {},
-      observation: "",
       isLoading: false,
     };
   },
@@ -42,11 +41,9 @@ export default {
   },
 
   created() {
-    if (this.selectedCategory && this.id) {
-      this.fetchItem();
-    } else {
-      console.warn("Aguardando selectedCategory para buscar item:", this.selectedCategory, this.id);
-    }
+    axios.get(`http://localhost:3000/${this.selectedCategory}/${this.id}`).then((response) => {
+      this.item = {quantity: 1, observation: "", ...response.data};
+    });
   },
 
   methods: {
