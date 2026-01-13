@@ -7,10 +7,20 @@
     
     <div class="content">
       <h3 class="item--name">{{ item.name }}</h3>
-      <a class="item--observation">Adicionar observação</a>
+      <a class="item--observation" @click="onShowObservationModal">Adicionar observação</a>
       <p class="item--observation-text">{{item.observation}}</p>
     </div>
     <p class="item--price">{{ item.price | currency }}</p>
+    <Modal :show="showObservationModal" @on-modal-close="onCloseObservation">
+
+        <div class="modal-content">
+          <h1>Adicionar observação</h1>
+          <textarea v-model="item.observations" rows="5"></textarea>
+          <button class="secondary-button" @click="onCloseObservationModal">Cancelar</button>
+          <button class="primary-button" @click="saveObservation">Salvar</button>
+        </div>
+
+    </Modal>
   </div>
 </template>
 
@@ -20,11 +30,18 @@ const images = imagesContext.keys().reduce((acc, key) => { acc[key.replace('./',
 
 import { mapActions } from 'vuex';
 import Quantity from './Quantity.vue';
+import Modal from './Modal.vue';
 
 export default {
   name: "CartItem",
   components: {
     Quantity,
+    Modal
+  },
+  data() {
+    return{
+      showObservationModal: false
+    }
   },
   props: {
     item: {},
@@ -47,7 +64,16 @@ export default {
       'increaseQuantity',
       'decreaseQuantity',
     ]),
-  },
+    onShowObservationModal() {
+      this.showObservationModal = true;
+    },
+    onCloseObservation() {
+      this.showObservationModal = false;
+    },
+    saveObservation() {
+      this.showObservationModal = false;
+    }
+  }
 };
 </script>
 
@@ -105,6 +131,7 @@ export default {
         font-size: 14px;
         color: @dark-grey;
         text-decoration: underline;
+        cursor: pointer;
     }
      &--observation-text{
         font-size: 14;
@@ -120,6 +147,19 @@ export default {
         font-size: 18px;
         line-height: 27px;
         color: @yellow;
+    }
+    .modal--content {
+        text-align: center;
+
+        textarea {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .buttons + button {
+            margin-left: 15px;
+            
+        }
     }
     @media @tablets {
         flex-wrap: wrap;
@@ -143,6 +183,11 @@ export default {
             order: 4;
             padding: 0 20px;
             margin: 5px 0;
+        }
+        .modal-content {
+            h1{
+                font-size: 20px;
+            }
         }
     }
 }

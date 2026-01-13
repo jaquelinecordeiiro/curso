@@ -41,7 +41,7 @@ export default{
         left: 0;
         background: rgba(0,0,0,0.5);
 
-        .modal--content{
+        &--content{
             background: white;
             width: 600px;
             border-radius: 8px;
@@ -53,10 +53,20 @@ export default{
             transform: translate(50%, -50%);         
 
         }
-        .modal--close{
+        &--close{
             text-align: right;
 
     }
+    @media @tablets {
+        &--content{
+            width: 90%;
+            margin: 0 auto;
+            padding: 15px;
+
+            
+        }
     }
+    }
+
 
 </style>
