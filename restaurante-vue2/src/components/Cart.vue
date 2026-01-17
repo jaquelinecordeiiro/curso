@@ -6,20 +6,23 @@
 
     <h2 class="cart--title">Seu pedido</h2>
 
-    <p v-if="hasItem">Seu carrinho está vazio</p>
-
-    <transition-group name="list" tag="div">
-      <CartItem
-        v-for="item in cartList"
-        :key="item.id"
-        :item="item"
-      />
-    </transition-group>
-
-    <div class="cart--total">
-      <span>Total:</span>
-      <span class="price">{{ getCartTotal | currency }}</span>
-    </div>
+   <div class="cart--content">
+      <p v-if="hasItem">Seu carrinho está vazio</p>
+  
+      <transition-group name="list" tag="div">
+        <CartItem
+          v-for="item in cartList"
+          :key="item.id"
+          :item="item"
+        />
+      </transition-group>
+  
+      <div class="cart--total">
+        <span>Total:</span>
+        <span class="price">{{ getCartTotal | currency }}</span>
+      </div>
+   </div>
+   <button class="primary-button payment-button">Finalizar Pedido</button>
   </div>
 </template>
 
@@ -66,9 +69,12 @@ currency(value) {
 .cart {
   background: white;
   width: 100%;
+  min-height: 100vh;
   max-width: 643px;
   box-sizing: border-box;
   padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
 
   &--go-back {
     font-weight: 600;
@@ -83,6 +89,9 @@ currency(value) {
     font-weight: 600;
     font-size: 24px;
   }
+  &--content {
+    flex-grow: 1;
+  }
 
   &--total {
     font-weight: 600;
@@ -94,6 +103,10 @@ currency(value) {
       color: @yellow;
       padding-left: 10px;
     }
+  }
+  .payment-button {
+    width: 397px;
+    margin: auto;
   }
 
   .list-enter-active,

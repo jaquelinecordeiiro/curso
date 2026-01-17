@@ -1,5 +1,6 @@
 <template>
   <div class="add-cart">
+
     <router-link to="/" class="add-cart--go-back" v-if="isSmallScreens()">← Voltar</router-link>
     <Item :item="item" class="add-cart--item" />
 
