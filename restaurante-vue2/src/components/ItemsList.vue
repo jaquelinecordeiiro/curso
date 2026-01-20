@@ -60,6 +60,7 @@ export default {
     flex-wrap: wrap;
     padding: 0;
     align-content: flex-start;
+    overflow: hidden;
   
 }
 @media @tablets  {

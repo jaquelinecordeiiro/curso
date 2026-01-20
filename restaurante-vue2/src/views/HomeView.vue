@@ -32,6 +32,7 @@ export default {
 <style scoped lang="less">
 .home {
   display: flex;
+  
 
   .cart-icon {
     width: 42px;
