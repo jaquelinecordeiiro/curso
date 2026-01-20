@@ -69,55 +69,57 @@ currency(value) {
 .cart {
   background: white;
   width: 100%;
-  min-height: 100vh;
-  max-width: 643px;
+  max-width: 420px; /* ↓ diminui largura do painel */
   box-sizing: border-box;
-  padding: 50px 20px;
+  padding: 24px 16px; /* ↓ menos espaço interno */
   display: flex;
   flex-direction: column;
 
   &--go-back {
     font-weight: 600;
-    font-size: 24px;
-    margin-bottom: 50px;
+    font-size: 18px;
+    margin-bottom: 16px; /* ↓ antes 50px */
     text-decoration: none;
     color: black;
   }
 
   &--title {
-    margin-top: 50px;
+    margin-top: 0; /* ↓ remove espaço inútil */
+    margin-bottom: 16px;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 20px;
   }
+
   &--content {
     flex-grow: 1;
   }
 
   &--total {
     font-weight: 600;
-    font-size: 24px;
+    font-size: 20px; /* ↓ menor */
     text-align: right;
-    margin-top: 30px;
+    margin-top: 16px; /* ↓ antes 30px */
 
     .price {
       color: @yellow;
-      padding-left: 10px;
+      padding-left: 6px;
     }
   }
+
   .payment-button {
-    width: 397px;
-    margin: auto;
+    width: 100%;
+    margin-top: 16px; /* ↓ em vez de margin:auto */
   }
 
   .list-enter-active,
   .list-leave-active {
-    transition: all 0.5s;
+    transition: all 0.3s;
   }
 
   .list-enter,
   .list-leave-to {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
 }
 
