@@ -57,12 +57,12 @@ export default {
 <style lang="less" scoped>
 .item {
   width: 215.95px;
-  height: 390px;
+  height: 290px;
   border-radius: 8px;
   background: white;
   position: relative;
-  margin: 20px;
-  padding: 20px;
+  margin: 20px 8px;
+  padding: 8px 12px;
 
   display: flex;
   flex-direction: column;
@@ -81,7 +81,8 @@ export default {
     &--img {
       display: block;
       margin: auto;
-      width: 100%;
+      width: 127px;
+      height: 87px;
     }
     &--name {
       font-weight: 600;

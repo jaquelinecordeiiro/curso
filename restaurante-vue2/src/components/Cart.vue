@@ -17,12 +17,13 @@
         />
       </transition-group>
   
-      <div class="cart--total">
-        <span>Total:</span>
-        <span class="price">{{ getCartTotal | currency }}</span>
-      </div>
+      
    </div>
-   <button class="primary-button payment-button">Finalizar Pedido</button>
+   <div class="cart--total">
+        <span>Total:</span>
+        <span class="price">{{ getCartTotal | currency }}</span>            
+    </div>
+   <button class="primary-button payment-button" @click="goToPayment">Finalizar Pedido</button>
   </div>
 </template>
 
@@ -62,6 +63,11 @@ currency(value) {
         return feather.icons.circle.toSvg();
     }
 },
+    methods: {
+        goToPayment() {
+            this.$router.push({ name: 'Payment' });
+        }
+    }
 }
 </script>
 
@@ -107,8 +113,8 @@ currency(value) {
   }
 
   .payment-button {
-    width: 100%;
-    margin-top: 16px; /* ↓ em vez de margin:auto */
+    width: 397px;
+    margin: 20px auto; /* ↓ em vez de margin:auto */
   }
 
   .list-enter-active,
@@ -128,6 +134,10 @@ currency(value) {
     width: 100%;
     min-width: unset;
     padding: 50px 20px 20px 0;
+
+    .payment-button {
+      width: 100%;
+    }
   }
 }
 
