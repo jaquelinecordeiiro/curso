@@ -3,10 +3,9 @@
         <div class="payment--content">
                 <router-link to="/" class="payment--go-back">← Voltar</router-link>
                 <Order/>
-            <Cart v-if="isDesktop()" />
-
-
+            
         </div>
+        <Cart v-if="isDesktop()" />
     </div>
 </template>
 
@@ -28,7 +27,7 @@ export default {
   .payment {
     display: flex;
     
-    .payment--content {
+    &--content {
       flex-grow: 1;
       padding: 50px;
 

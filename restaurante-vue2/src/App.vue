@@ -8,3 +8,4 @@
 #app {
   // Styles for app container
 }
+</style>

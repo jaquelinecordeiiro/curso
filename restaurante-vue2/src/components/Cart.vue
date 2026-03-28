@@ -80,8 +80,10 @@ currency(value) {
   padding: 24px 16px; /* ↓ menos espaço interno */
   display: flex;
   flex-direction: column;
+  margin-left: auto;
+  min-height: 100vh;
 
-  &--go-back {
+  .cart--go-back {
     font-weight: 600;
     font-size: 18px;
     margin-bottom: 16px; /* ↓ antes 50px */

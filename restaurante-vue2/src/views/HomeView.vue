@@ -32,6 +32,8 @@ export default {
 <style scoped lang="less">
 .home {
   display: flex;
+  min-height: 100vh;      
+  align-items: stretch;
   
 
   .cart-icon {
