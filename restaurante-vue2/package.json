@@ -12,6 +12,7 @@
     "core-js": "^3.6.5",
     "es6-promise": "^4.2.8",
     "feather-icons": "^4.29.2",
+    "v-mask": "^2.3.0",
     "vue": "^2.6.11",
     "vue-inline-svg": "^2.0.0",
     "vue-router": "^3.5.1",
