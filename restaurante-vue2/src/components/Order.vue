@@ -44,7 +44,7 @@
 
             <div class="payment">
                 <p class="section--title">Pagamento</p>
-                <p>Método de pagamento</p>
+                <p>Método de pagamento:</p>
                 <div class="radio-container">
                     <div class="radio-options">
                         <input type="radio" name="payment-type" id="credit-card" value="credit-card"
@@ -353,6 +353,11 @@ export default {
                 margin-left: 15px;
             }
         }
+    }
+
+    @media @tablets {
+        width: 100%;
+        padding: 0;
     }
 }
 </style>

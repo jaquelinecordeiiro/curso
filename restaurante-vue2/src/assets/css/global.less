@@ -45,6 +45,8 @@ input[type="text"] {
   border: 1px solid @dark-grey;
   color: @dark-grey;
   padding: 0 15px;
+  width: 100%;
+  box-sizing: border-box;
 
   &.error{
     border: 1px solid @error-color;
@@ -55,10 +57,9 @@ input[type="text"] {
   }
 }
 
-  @media @tablets {
-    body {
-      background: white;
-    }
-
+@media @tablets {
+  body {
+    background: white;
   }
+}
 

@@ -43,10 +43,12 @@ export default {
   }
 
 /* MOBILE */
-@media (max-width: 768px) {
-  .payment {
-    padding: 20px;
-    flex-direction: column;
+@media @tablets {
+
+    &--content{
+      padding: 50px 20px;
+
+    }
   }
-}
+
 </style>
