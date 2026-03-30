@@ -20,35 +20,45 @@
             </div>
 
             <div class="address">
-                <p class="section--title">Endereço</p> <!-- Fix #6: section-title → section--title -->
-                <div class="delivery-type">
+                <p class="section--title">Endereço</p>
+                <div class="radio-container">
                     <div class="radio-options">
                         <input type="radio" name="delivery-type" id="store" value="store" v-model="deliveryType">
                         <label for="store">Retirar na loja</label>
                     </div>
 
                     <div class="radio-options">
-                        <input 
-                        type="radio" 
-                        name="delivery-type" 
-                        id="delivery" 
-                        value="delivery" 
-                        v-model="deliveryType"
-                        />
+                        <input type="radio" name="delivery-type" id="delivery" value="delivery"
+                            v-model="deliveryType" />
 
                         <label for="delivery">Delivery</label>
                     </div>
                 </div>
                 <div class="address-card" v-if="isDeliveryType && hasAddressInfo && saveAddress">
                     <p>{{ formData.street.value }} {{ formData.number.value }}</p>
-                    <p>{{ formData.city.value }}</p>  <p>{{ formData.cep.value }}</p>
+                    <p>{{ formData.city.value }}</p>
+                    <p>{{ formData.cep.value }}</p>
                 </div>
                 <a @click="onShowAddressModal" v-if="isDeliveryType">{{ addressButtonLabel }}</a>
             </div>
 
             <div class="payment">
-                <p>Pagamento</p>
-                <p>Método de pagamento</p>             
+                <p class="section--title">Pagamento</p>
+                <p>Método de pagamento</p>
+                <div class="radio-container">
+                    <div class="radio-options">
+                        <input type="radio" name="payment-type" id="credit-card" value="credit-card"
+                            v-model="paymentType">
+                        <label for="credit-card">Cartão</label>
+                    </div>
+
+                    <div class="radio-container">
+                        <div class="radio-options">
+                            <input type="radio" name="payment-type" id="cash" value="cash" v-model="paymentType">
+                            <label for="cash">Dinheiro</label>
+                        </div>
+                    </div>
+                </div>
             </div>
         </form>
         <button class="primary-button" @click="orderItens">Concluir Pedido</button>
@@ -168,6 +178,7 @@ export default {
             },
             showAddressModal: false,
             deliveryType: 'store',
+            paymentType: 'credit-card',
             saveAddress: false
         };
     },
@@ -280,35 +291,38 @@ export default {
             font-size: 22px;
             margin-bottom: 20px;
         }
-        
+
+        .radio-container {
+            display: flex;
+        }
+
         .address {
-            .delivery-type {
-                display: flex;
+
+
+            a {
+                color: @pink;
+                font-weight: normal;
+                font-size: 12px;
+                text-decoration: underline;
+                cursor: pointer;
+                margin: 15px 0;
+                display: block;
+                width: fit-content;
             }
-        }
 
-        a {
-            color: @pink;
-            font-weight: normal;
-            font-size: 12px;
-            text-decoration: underline;
-            cursor: pointer;
-            margin: 15px 0;
-            display: block;
-            width: fit-content;
-        }
-        .address-card{
-            border-radius: 8px;
-            border: 1px solid @dark-grey;
-            padding: 10px 20px;
-            margin: 15px 0;
-            width: fit-content;
+            .address-card {
+                border-radius: 8px;
+                border: 1px solid @dark-grey;
+                padding: 10px 20px;
+                margin: 15px 0;
+                width: fit-content;
 
-            p{
-            font-weight: normal;
-            font-size: 12px;
-            color: @dark-grey;
-            margin: 5px 0;
+                p {
+                    font-weight: normal;
+                    font-size: 12px;
+                    color: @dark-grey;
+                    margin: 5px 0;
+                }
             }
         }
 
