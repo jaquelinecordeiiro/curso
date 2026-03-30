@@ -23,7 +23,7 @@
         <span>Total:</span>
         <span class="price">{{ getCartTotal | currency }}</span>            
     </div>
-   <button class="primary-button payment-button" @click="goToPayment">Finalizar Pedido</button>
+   <button class="primary-button payment-button" v-if="!!cartList.length" @click="goToPayment">Finalizar Pedido</button>
   </div>
 </template>
 
@@ -74,15 +74,13 @@ currency(value) {
 <style lang="less" scoped>
 .cart {
   background: white;
-  width: 100%;
-  max-width: 420px; /* ↓ diminui largura do painel */
-  box-sizing: border-box;
-  padding: 24px 16px; /* ↓ menos espaço interno */
+  width: 520px;
+  height: 100vh;
+  min-width: 520px;
+  padding: 30px; 
   display: flex;
   flex-direction: column;
-  margin-left: auto;
-  min-height: 100vh;
-
+  
   .cart--go-back {
     font-weight: 600;
     font-size: 18px;

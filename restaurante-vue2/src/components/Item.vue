@@ -76,13 +76,12 @@ export default {
       right: 15px;
       font-weight: 500;
       font-size: 12px;
-      padding: 5px 10px;
+      padding: 3px 8px;
     }
     &--img {
       display: block;
       margin: auto;
-      width: 127px;
-      height: 87px;
+      width: 100%;
     }
     &--name {
       font-weight: 600;
@@ -109,7 +108,7 @@ export default {
       margin-top: 10px;
       }
 
-    @media @tablets {
+    @media @smartphones {
       width: 100%;
       height: fit-content;
       border: 1px solid @light-grey;
@@ -145,39 +144,6 @@ export default {
       }
     }
 
-    /* Smartphones tweaks */
-    @media @smartphones {
-      width: 100%;
-      padding: 12px;
-      margin: 8px 0;
-      border-radius: 6px;
-      display: flex;
-      flex-direction: column;
-
-      &--img {
-        width: 64px;
-        margin: 0 12px 0 0;
-      }
-
-      &--name {
-        font-size: 16px;
-      }
-
-      &--description {
-        font-size: 12px;
-      }
-
-      &--price {
-        font-size: 16px;
-      }
-
-      .container {
-        margin-right: 10px;
-      }
-
-      .content {
-        padding: 0;
-      }
-    }
+   
 }
 </style> 

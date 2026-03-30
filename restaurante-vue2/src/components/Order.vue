@@ -96,11 +96,25 @@
                 <button class="primary-button" @click="validateAddressForm">Adicionar</button>
             </div>
         </Modal>
+
+        <Modal :show="showInvalidAddressModal" @on-modal-close="hideInvalidAddressModal">
+            <div class="invalid-address-modal">
+                <span v-html="warningIcon" class="icon"></span>
+                <span>No modalidade delivery é necessário adicionar um endereço valido</span>
+            </div>
+        </Modal>
+        <Modal :show="showSuccessModal" @on-modal-close="hideSuccessModal">
+            <div class="succes-modal">
+                <span v-html="successIcon" class="icon"></span>
+                <span>Pedido realizado com sucesso!</span>
+            </div>
+        </Modal>
     </div>
 </template>
 
 <script>
 import Modal from '@/components/Modal';
+import feather from 'feather-icons';
 
 export default {
     components: {
@@ -116,7 +130,6 @@ export default {
                     label: 'Nome*',
                     valid: true,
                     isValid: () => {
-                        // Fix #2: .valid → .value
                         this.formData.name.valid = !!this.formData.name.value.length;
                     }
                 },
@@ -127,7 +140,6 @@ export default {
                     label: 'Celular*',
                     valid: true,
                     isValid: () => {
-                        // Fix #2 e #3: .valid → .value, lógica de tamanho corrigida
                         this.formData.cellphone.valid = this.formData.cellphone.value.length === 16;
                     }
                 },
@@ -138,7 +150,6 @@ export default {
                     label: 'CEP*',
                     valid: true,
                     isValid: () => {
-                        // Fix #2: .valid → .value
                         this.formData.cep.valid = !!this.formData.cep.value.length;
                     }
                 },
@@ -149,7 +160,6 @@ export default {
                     label: 'Cidade*',
                     valid: true,
                     isValid: () => {
-                        // Fix #2: .valid → .value
                         this.formData.city.valid = !!this.formData.city.value.length;
                     }
                 },
@@ -160,7 +170,6 @@ export default {
                     label: 'Rua*',
                     valid: true,
                     isValid: () => {
-                        // Fix #2: .valid → .value
                         this.formData.street.valid = !!this.formData.street.value.length;
                     }
                 },
@@ -177,27 +186,39 @@ export default {
                 }
             },
             showAddressModal: false,
+            showInvalidAddressModal: false,
+            showSuccessModal: false,
             deliveryType: 'store',
             paymentType: 'credit-card',
             saveAddress: false
         };
     },
-    // Fix #1: computeds → computed
     computed: {
+        warningIcon() {
+            return feather.icons['alert-triangle'].toSvg()
+        },
+        successIcon() {
+            return feather.icons['check-circle'].toSvg()
+        },
         isAddressFormValid() {
             let isValid = true;
-            // Fix #4: .valid() → .valid
             isValid &= this.formData.city.valid;
             isValid &= this.formData.cep.valid;
             isValid &= this.formData.street.valid;
             isValid &= this.formData.number.valid;
             return isValid;
         },
+        isUserFormDataValid() {
+            let isValid = true;
+            isValid &= this.formData.cellphone.valid;
+            isValid &= this.formData.name.valid;
+
+            return isValid;
+        },
         isDeliveryType() {
             return this.deliveryType === 'delivery';
         },
         hasAddressInfo() {
-            // Fix #5: .value() → .value
             return (
                 this.formData.city.value ||
                 this.formData.cep.value ||
@@ -213,6 +234,10 @@ export default {
         triggerValidations() {
             this.formData.name.isValid();
             this.formData.cellphone.isValid();
+            if (this.isDeliveryType) {
+                this.triggerAddressFormValidations();
+                this.showInvalidAddressModal = !this.isAddressFormValid
+            }
         },
         triggerAddressFormValidations() {
             this.formData.cep.isValid();
@@ -222,6 +247,22 @@ export default {
         },
         orderItens() {
             this.triggerValidations();
+            if (!this.isUserFormDataValid || !this.isAddressFormValid) return;
+            this.showSuccessModal = true;
+            const phone = '+55829835-3161';
+            let text = `
+                Cliente: ${this.formData.name.value}
+                Contato: ${this.formData.cellphone.value}
+                Pedido:
+                ${this.$store.state.cartList.map(item => {
+                    return `
+                        ${item.quantity}x ${item.name}
+                        Obs: ${item.observations}
+                        `
+                })}
+            `
+            text = window.encodeURIComponent(text);
+            window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${text}`)
         },
         onShowAddressModal() {
             this.showAddressModal = true;
@@ -229,11 +270,17 @@ export default {
         hideAddressModal() {
             this.showAddressModal = false;
         },
+        hideSuccessModal(){
+            this.$router.push({name: 'Home'})
+        },
         validateAddressForm() {
             this.triggerAddressFormValidations();
             if (!this.isAddressFormValid) return;
             this.saveAddress = true;
             this.showAddressModal = false;
+        },
+        hideInvalidAddressModal() {
+            this.showInvalidAddressModal = false;
         }
     }
 };
@@ -355,9 +402,35 @@ export default {
         }
     }
 
+    .invalid-address-modal, .success-modal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+
+        .icon {
+            margin-bottom: 15px;
+
+        }
+    }
+
     @media @tablets {
         width: 100%;
         padding: 0;
+
+        .modal-content {
+            button+button {
+                margin-left: 5px;
+
+            }
+        }
+
+        .address-container {
+            .input-field+.input-field {
+                margin-left: 5px;
+            }
+        }
     }
 }
 </style>

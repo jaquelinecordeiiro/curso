@@ -1,7 +1,7 @@
 <template>
   <div class="items-list">
-    <Loading v-if="isLoading"/>
-    <Item v-for="item in ItemsList" :key="item.id" :item="item"/>
+    <Loading v-if="isLoading" />
+    <Item v-for="item in ItemsList" :key="item.id" :item="item" />
   </div>
 </template>
 
@@ -28,7 +28,7 @@ export default {
 
   computed: {
     selectedCategory() {
-     return this.$store.state.selectedCategoryId;
+      return this.$store.state.selectedCategoryId;
     }
   },
   methods: {
@@ -38,10 +38,10 @@ export default {
 
       setTimeout(() => {
         axios.get(`http://localhost:3000/${this.selectedCategory}`).then((response) => {
-        this.ItemsList = response.data;
-        this.isLoading = false;
-      });
-      }, 500);      
+          this.ItemsList = response.data;
+          this.isLoading = false;
+        });
+      }, 500);
     }
   },
   watch: {
@@ -54,28 +54,30 @@ export default {
 
 <style lang="less" scoped>
 .items-list {
-    margin: 20px;
-    display: flex;
+
+  width: 100%;
+  margin: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+
+  @media @small-desktops {
     width: 100%;
-    flex-wrap: wrap;
-    padding: 0;
-    align-content: flex-start;
-    overflow: hidden;
-  
-}
-@media @tablets  {
-  .items-list {
-    flex-direction: column;
-    margin: 0;
-    padding: 16px;
-
+    max-width: 1200px;
+    margin: 50px auto;
   }
-}
 
-@media @smartphones {
-  .items-list {
-    padding: 8px;
+  @media @tablets {    
+      flex-wrap: wrap;
+      margin: 0px;
+      padding: 20px;
+
+    }
   }
+
+
+
+.items-list {
+  padding: 8px;
 }
-  
 </style>

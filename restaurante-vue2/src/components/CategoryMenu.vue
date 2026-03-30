@@ -1,12 +1,8 @@
 <template>
   <div class="category-menu">
     <ul>
-      <li
-        v-for="category in categoriesList"
-        :key="category.id"
-        @click="onCategoryClick(category.id)"
-        :class="{ active: isActive(category.id) }"
-      >
+      <li v-for="category in categoriesList" :key="category.id" @click="onCategoryClick(category.id)"
+        :class="{ active: isActive(category.id) }">
         <component :is="category.icon" />
         <p>{{ category.label }}</p>
       </li>
@@ -77,17 +73,18 @@ export default {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100px;;
+      height: 100px;
+      ;
 
-      p{
+      p {
         margin-bottom: 0px;
         font-weight: 500;
         font-size: 14px;
         color: @dark-grey;
       }
 
-      svg{
-        path{
+      svg {
+        path {
           fill: @dark-grey;
         }
       }
@@ -96,11 +93,11 @@ export default {
         background: @yellow;
         border-radius: 8px;
 
-        p{
+        p {
           color: black
         }
 
-        svg{
+        svg {
           path {
             fill: black;
           }
@@ -109,12 +106,15 @@ export default {
     }
   }
 
-  @media @tablets {
+  @media @small-desktops {
     width: 100%;
+    max-width: 800px;
+    margin: auto;
     height: fit-content;
 
     ul {
       display: flex;
+      justify-content: space-around;
       margin: 20px;
       overflow: scroll;
 
@@ -130,20 +130,8 @@ export default {
 
   @media @smartphones {
     ul {
-      margin: 8px;
-      overflow-x: auto;
+      justify-content: unset;
     }
-
-    ul li {
-      min-width: 60px;
-      height: 70px;
-    }
-
-    ul li p {
-      font-size: 11px;
-    }
-
-    ul li svg { width: 20px; height: 20px; }
   }
 }
 </style>
