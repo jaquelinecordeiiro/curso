@@ -1,7 +1,7 @@
 <template>
   <div class="add-cart">
 
-    <router-link to="/" class="add-cart--go-back" v-if="isSmallScreens()">← Voltar</router-link>
+    <router-link to="/" class="add-cart--go-back">← Voltar</router-link>
     <Item :item="item" class="add-cart--item" />
 
     <div class="add-cart--container">
@@ -9,7 +9,7 @@
       <Quantity :item="item" :useStore="false" />
     </div>
     <p class="add-cart--observations">Observações:</p>
-    <textarea v-model="item.observation" rows="10" placeholder=""></textarea>
+    <textarea v-model="item.observation" rows="7" placeholder=""></textarea>
     <button class="primary-button" @click="onAddToCartButtonClick">Adicionar ao carrinho</button>
 
   </div>
@@ -42,15 +42,17 @@ export default {
   },
 
   created() {
+    if (this.isDesktop()) {
+      this.$router.push({name: 'Home'});
+    }
     axios.get(`http://localhost:3000/${this.selectedCategory}/${this.id}`).then((response) => {
-      this.item = {quantity: 1, observation: "", ...response.data};
+      this.item = { quantity: 1, observation: "", ...response.data };
     });
   },
 
   methods: {
     async fetchItem() {
       const base = "/api";
-      // Usa categoria se disponível, caso contrário tenta o endpoint fallback /items/:id
       let url;
       if (this.selectedCategory) {
         url = `${base}/${this.selectedCategory}/${this.id}`;
@@ -67,7 +69,6 @@ export default {
         };
         return;
       } catch (error) {
-        // Se 404, tenta buscar pelo id nas coleções conhecidas
         if (error.response && error.response.status === 404) {
           const found = await this.searchCollections();
           if (found) {
@@ -81,7 +82,6 @@ export default {
       }
     },
 
-    // searchCollections (fallback) procura o id nas coleções conhecidas
     async searchCollections() {
       const collections = ["burguers", "pizza", "deserts", "drinks", "combo"];
       for (const col of collections) {
@@ -91,7 +91,7 @@ export default {
             return res.data[0];
           }
         } catch (e) {
-          // ignora erro e tenta próxima coleção
+          //
         }
       }
       return null;
@@ -114,6 +114,8 @@ export default {
 
 <style lang="less" scoped>
 .add-cart {
+  max-width: 600px;
+  margin: auto;
   padding: 50px 20px;
 
   &--go-back {
@@ -126,6 +128,7 @@ export default {
 
   &--item {
     margin-top: 50px;
+    margin: 20px auto;
   }
 
   &--container {
@@ -160,15 +163,20 @@ export default {
     }
 
   }
+
   button {
     width: calc(100% - 40px);
-    position: fixed;
-    bottom: 30px;
-    left: 20px;
-    right: 20px;
+    max-width: 300px;
+    display: block;
+    margin: 30px auto;
+  }
 
-    &:hover {
-      background-color: darken(@yellow, 10%);
+  @media @smartphones {
+    button {
+      position: fixed;
+      bottom: 30px;
+      width: calc(100% - 40px);
+      max-width: unset;
     }
   }
 }
