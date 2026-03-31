@@ -98,7 +98,7 @@ export default {
     },
     onAddToCartButtonClick() {
       this.$store.dispatch("addToCart", this.item);
-      this.$router.push({ name: 'home' });
+      this.$router.push({ name: 'Home' });
     }
   },
 

@@ -8,7 +8,7 @@
     <div class="content">
       <h2 class="item--name">{{ item.name }}</h2>
       <p class="item--description">{{ item.description }}</p>
-      <span class="item--price">Preço: ${{ item.price | currency }}</span>
+      <span class="item--price">Preço: {{ item.price | currency }}</span>
     </div>
   </div>
 </template>

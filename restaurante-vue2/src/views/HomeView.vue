@@ -34,7 +34,7 @@ export default {
   display: flex;
 
   .cart-icon {
-    display: nome;
+    display: none;
   }
 
 

@@ -57,11 +57,9 @@ export default {
     hasItem() {
       return this.cartList.length === 0;
     },
-    circleIcon() {
-      return feather.icons.circle.toSvg();
-    },
+    
     isPaymentScreen() {
-      return this.$router.name === 'Payment';
+      return this.$route.name === 'Payment';
     }
   },
   methods: {

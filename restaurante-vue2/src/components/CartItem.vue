@@ -15,7 +15,7 @@
 
         <div class="modal-content">
           <h1>Adicionar observação</h1>
-          <textarea v-model="item.observations" rows="5"></textarea>
+          <textarea v-model="item.observation" rows="5"></textarea>
           <button class="secondary-button" @click="onCloseObservationModal">Cancelar</button>
           <button class="primary-button" @click="saveObservation">Salvar</button>
         </div>
